@@ -1,0 +1,471 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://brianwendt.github.io/dnd5e_json_character/Character.json",
+    "title": "BrianWendt/dnd5e_json_character",
+    "description": "Standardized JSON structure for D&D 5e Character data.",
+    "$comment": "version 0.1",
+    "type": "object",
+    "required": ["name", "player", "race", "speed"],
+    "properties": {
+        "name": {
+            "type": "string"
+        },
+        "player": {
+            "type": "string"
+        },
+        "race": {
+            "type": "object",
+            "required": ["name"],
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "option": {
+                    "type": "string"
+                }
+            }
+        },
+        "classes": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/character_class"
+            }
+        },
+        "background": {
+            "type": "object",
+            "required": ["name"],
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "option": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string",
+                    "input": "textarea"
+                }
+            }
+        },
+        "alignment": {
+            "type": "string"
+        },
+        "xp": {
+            "type": "integer",
+            "minimum": 0,
+            "default": 0
+        },
+        "speed": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "examples": ["30 ft.", "fly 80 ft", "swim 20 ft"]
+            },
+            "description": "Walking speed in feet"
+        },
+        "hit_points": {
+            "type": "object",
+            "properties": {
+                "max": {
+                    "type": "integer",
+                    "default": 0
+                },
+                "current": {
+                    "type": "integer"
+                }
+            }
+        },
+        "languages": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "skills": {
+            "type": "object",
+            "properties": {
+                "Athletics": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "Acrobatics": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "SleightOfHand": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "Stealth": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "Arcana": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "History": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "Investigation": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "Nature": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "Religion": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "AnimalHandling": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "Insight": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "Medicine": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "Perception": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "Survival": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "Deception": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "Intimidation": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "Performance": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "Persuasion": {
+                    "type": "boolean",
+                    "default": false
+                }
+            }
+        },
+        "skill_points": {
+            "type": "object",
+            "required": ["str", "dex", "con", "int", "wis", "cha"],
+            "properties": {
+                "str": {
+                    "type": "integer",
+                    "default": 10,
+                    "minimum": 0,
+                    "maximum": 20,
+                    "description": "Strength"
+                },
+                "dex": {
+                    "type": "integer",
+                    "default": 10,
+                    "minimum": 0,
+                    "maximum": 20,
+                    "description": "Dexterty"
+                },
+                "con": {
+                    "type": "integer",
+                    "default": 10,
+                    "minimum": 0,
+                    "maximum": 20,
+                    "description": "Constitution"
+                },
+                "int": {
+                    "type": "integer",
+                    "default": 10,
+                    "minimum": 0,
+                    "maximum": 20,
+                    "description": "Intelligence"
+                },
+                "wis": {
+                    "type": "integer",
+                    "default": 10,
+                    "minimum": 0,
+                    "maximum": 20,
+                    "description": "Wisdom"
+                },
+                "cha": {
+                    "type": "integer",
+                    "default": 10,
+                    "minimum": 0,
+                    "maximum": 20,
+                    "description": "Charisma"
+                }
+            }
+        },
+        "savingThrows": {
+            "type": "object",
+            "properties": {
+                "str": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "dex": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "con": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "int": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "wis": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "cha": {
+                    "type": "boolean",
+                    "default": false
+                }
+            }
+        },
+        "description": {
+            "type": "object",
+            "properties": {
+                "age": {
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "eyes": {
+                    "type": "string"
+                },
+                "hair": {
+                    "type": "string"
+                },
+                "skin": {
+                    "type": "string"
+                },
+                "weight": {
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "height": {
+                    "type": "string"
+                },
+                "personality": {
+                    "type": "string"
+                },
+                "ideal": {
+                    "type": "string"
+                },
+                "bond": {
+                    "type": "string"
+                },
+                "flaw": {
+                    "type": "string"
+                },
+                "backstory": {
+                    "type": "string",
+                    "input": "textarea"
+                },
+                "physical": {
+                    "type": "string"
+                }
+            }
+        },
+        "armor_class": {
+            "type": "object",
+            "properties": {
+                "value": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "default": 10
+                },
+                "description": {
+                    "type": "string",
+                    "default": "Unarmored"
+                }
+            }
+        },
+        "shield": {
+            "type": "boolean",
+            "default": false
+        },
+        "weapons": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/weapon"
+            }
+        },
+        "spells": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/spell"
+            }
+        },
+        "features": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/feature"
+            }
+        },
+        "treasure": {
+            "type": "object",
+            "properties": {
+                "pp": {
+                    "type": "number",
+                    "default": 0,
+                    "description": "Platimum"
+                },
+                "ep": {
+                    "type": "number",
+                    "default": 0,
+                    "description": "Electrum"
+                },
+                "gp": {
+                    "type": "number",
+                    "default": 0,
+                    "description": "Gold"
+                },
+                "sp": {
+                    "type": "number",
+                    "default": 0,
+                    "description": "Silver"
+                },
+                "cp": {
+                    "type": "number",
+                    "default": 0,
+                    "description": "Copper"
+                }
+            }
+        },
+        "equipment": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        }
+    },
+    "definitions": {
+        "character_class": {
+            "$id": "#/definitions/character_class",
+            "type": "object",
+            "required": ["name", "level"],
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "level": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 20
+                },
+                "hit_die": {
+                    "type": "string",
+                    "enum": ["d4", "d6", "d8", "d10", "d12", "d20"]
+                },
+                "spellcasting": {
+                    "type": "string",
+                    "default": "",
+                    "enum": ["", "str", "dex", "con", "int", "wis", "cha"]
+                }
+            }
+        },
+        "weapon": {
+            "$id": "#/definitions/weapon",
+            "type": "object",
+            "required": ["name", "damage"],
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "examples": ["Dart"]
+                },
+                "damage": {
+                    "type": "string",
+                    "examples": ["1d4 piercing"]
+                },
+                "props": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "default": [],
+                    "examples": ["Finesse", "Thrown (range 20/60)"]
+                }
+            }
+        },
+        "spell": {
+            "$id": "#/definitions/spell",
+            "type": "object",
+            "required": ["name", "description", "level", "casting_time", "range_area", "components", "duration"],
+            "properties": {
+                "source": {
+                    "type": "string",
+                    "examples": ["PHB p.300"]
+                },
+                "name": {
+                    "type": "string",
+                    "examples": ["Acid Splash"]
+                },
+                "description": {
+                    "type": "string",
+                    "input": "textarea"
+                },
+                "level": {
+                    "type": "string",
+                    "examples": ["Cantrip", "1"]
+                },
+                "casting_time": {
+                    "type": "string",
+                    "default": "1 Action"
+                },
+                "range_area": {
+                    "type": "string",
+                    "examples": ["60ft", "Self"]
+                },
+                "components": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": ["V", "S", "M", "F", "DF", "XP"]
+                    }
+                },
+                "duration": {
+                    "type": "string",
+                    "examples": ["Instantaneous"]
+                },
+                "school": {
+                    "type": "string",
+                    "examples": ["Conjuring"]
+                },
+                "attack_save": {
+                    "type": "string",
+                    "examples": ["DEX Save", "Ranged"]
+                },
+                "damage_effect": {
+                    "type": "string",
+                    "examples": ["Acid"]
+                }
+            }
+        },
+        "feature": {
+            "$id": "#/definitions/feature",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string",
+                    "input": "textarea"
+                }
+            }
+        }
+    }
+}
