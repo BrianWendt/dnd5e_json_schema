@@ -3,11 +3,11 @@
     "player": "You",
     "race": {
         "name": "Dragonborn",
-        "option": "Silver"
+        "subtype": "Silver"
     },
     "classes": [{
             "name": "Sorcerer",
-            "option": "Draconic Ancestor",
+            "subtype": "Draconic Ancestor",
             "level": 1,
             "hit_die": "d6",
             "spellcasting": "cha"
@@ -17,7 +17,7 @@
     "hit_points": {
         "max": 9
     },
-    "skill_points": {
+    "ability_scores": {
         "str": 10,
         "dex": 13,
         "con": 14,
@@ -52,16 +52,16 @@
     "weapons": [
         {
             "name": "Quarterstaf",
-            "damage": "1d8 bludgeoning"
+            "stat": "str",
+            "damage": "1d8",
+            "damage_type": "Bludgeoning"
         },
         {
             "name": "Dagger",
-            "damage": "1d4+1 piercing",
+            "damage": "1d4+1",
+            "damage_type": "Piercing",
+            "stat": "dex",
             "props": ["Thrown (range 20/60)"]
-        },
-        {
-            "name": "Quarterstaf",
-            "damage": "1d8 bludgeoning"
         }
     ],
     "spells": [

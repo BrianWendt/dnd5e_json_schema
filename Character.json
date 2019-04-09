@@ -20,7 +20,7 @@
                 "name": {
                     "type": "string"
                 },
-                "option": {
+                "subtype": {
                     "type": "string"
                 }
             }
@@ -75,12 +75,7 @@
                 }
             }
         },
-        "languages": {
-            "type": "array",
-            "items": {
-                "type": "string"
-            }
-        },
+
         "skills": {
             "type": "object",
             "properties": {
@@ -158,7 +153,35 @@
                 }
             }
         },
-        "skill_points": {
+        "weapon_proficiencies": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "examples": ["Simple Weapons", "Martial Weapons"]
+            }
+        },
+        "armor_proficiencies": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "examples": ["Light Armor", "Medium Armor", "Heavy Armor", "Shields"]
+            }
+        },
+        "tool_proficiencies": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "examples": ["Artisan's Tools", "Disguise Kit"]
+            }
+        },
+        "languages": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "examples": ["Common", "Abyssal", "Draconic", "Dwarvish", "Elven"]
+            }
+        },
+        "ability_scores": {
             "type": "object",
             "required": ["str", "dex", "con", "int", "wis", "cha"],
             "properties": {
@@ -315,6 +338,12 @@
                 "$ref": "#/definitions/feature"
             }
         },
+        "feats": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/feat"
+            }
+        },
         "treasure": {
             "type": "object",
             "properties": {
@@ -366,6 +395,9 @@
                     "minimum": 1,
                     "maximum": 20
                 },
+                "subtype": {
+                    "type": "string"
+                },
                 "hit_die": {
                     "type": "string",
                     "enum": ["d4", "d6", "d8", "d10", "d12", "d20"]
@@ -380,7 +412,7 @@
         "weapon": {
             "$id": "#/definitions/weapon",
             "type": "object",
-            "required": ["name", "damage"],
+            "required": ["name", "damage", "damage_type"],
             "properties": {
                 "name": {
                     "type": "string",
@@ -388,7 +420,15 @@
                 },
                 "damage": {
                     "type": "string",
-                    "examples": ["1d4 piercing"]
+                    "examples": ["1d4", "2d6", "1d8+1"]
+                },
+                "damage_type": {
+                    "$ref": "#/definitions/damage_type"
+                },
+                "stat": {
+                    "type": "string",
+                    "default": "str",
+                    "enum": ["str", "dex", "con", "int", "wis", "cha"]
                 },
                 "props": {
                     "type": "array",
@@ -397,6 +437,10 @@
                     },
                     "default": [],
                     "examples": ["Finesse", "Thrown (range 20/60)"]
+                },
+                "description": {
+                    "type": "string",
+                    "input": "textarea"
                 }
             }
         },
@@ -419,7 +463,7 @@
                 },
                 "level": {
                     "type": "string",
-                    "examples": ["Cantrip", "1"]
+                    "examples": ["Cantrip", "1", "2", "3", "4"]
                 },
                 "casting_time": {
                     "type": "string",
@@ -457,6 +501,7 @@
         "feature": {
             "$id": "#/definitions/feature",
             "type": "object",
+            "required": ["name"],
             "properties": {
                 "name": {
                     "type": "string"
@@ -466,6 +511,26 @@
                     "input": "textarea"
                 }
             }
+        },
+        "feat": {
+            "$id": "#/definitions/feat",
+            "type": "object",
+            "required": ["name"],
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string",
+                    "input": "textarea"
+                }
+            }
+        },
+        "damage_type": {
+            "$id": "#/definitions/damage_type",
+            "type": "string",
+            "default": "none",
+            "enum": ["none", "Piercing", "Slashing", "Bludgeoning", "Acid", "Cold", "Fire", "Force", "Lightning", "Necrotic", "Poison", "Psychic", "Radiant", "Thunder"]
         }
     }
 }
