@@ -34,7 +34,7 @@ index = index.replace(/%version%/g, package.version);
 
 var schemas_list = "";
 schemas.map(schema => {
-    schemas_list +=  ("\n - <a href='/%schema%.json'>%schema%.json</a> | <a href='/%schema%.html'>[documentation]</a>").replace(/%schema%/g, schema);
+    schemas_list +=  ("\n - <a href='./%schema%.json'>%schema%.json</a> | <a href='./%schema%.html'>[documentation]</a>").replace(/%schema%/g, schema);
 });
 
 index = index.replace(/%schemas%/g, schemas_list);
