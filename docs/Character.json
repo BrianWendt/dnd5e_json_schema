@@ -1,12 +1,8 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://brianwendt.github.io/dnd5e_json_schema/Character.json",
+    "$id": "Character.json",
     "title": "JSON Schema for D&D 5e Character data.",
     "description": "This schema describes a 5e character. Some data, such as ability score modifiers, are not included because they are extrapolated.<br/> Samples may be found at https://github.com/BrianWendt/dnd5e_json_schema/tree/master/samples/Character/",
-    "links": {
-        "rel": "self",
-        "href": "./Character.json"
-    },
     "$comment": "version 0.1.1",
     "type": "object",
     "required": ["name", "player", "race", "speed"],
@@ -34,7 +30,7 @@
                     }
                 },
                 "source": {
-                    "$ref": "#/definitions/source"
+                    "$ref": "source.json"
                 }
             }
         },
@@ -59,7 +55,7 @@
                     "input": "textarea"
                 },
                 "source": {
-                    "$ref": "#/definitions/source"
+                    "$ref": "source.json"
                 }
             }
         },
@@ -352,7 +348,7 @@
         "spells": {
             "type": "array",
             "items": {
-                "$ref": "#/definitions/spell"
+                "$ref": "https://brianwendt.github.io/dnd5e_json_schema/Spell.json"
             }
         },
         "features": {
@@ -492,7 +488,7 @@
                     "enum": ["", "str", "dex", "con", "int", "wis", "cha"]
                 },
                 "source": {
-                    "$ref": "#/definitions/source"
+                    "$ref": "source.json"
                 }
             }
         },
@@ -534,60 +530,7 @@
                     "default": "false"
                 },
                 "source": {
-                    "$ref": "#/definitions/source"
-                }
-            }
-        },
-        "spell": {
-            "$id": "#/definitions/spell",
-            "type": "object",
-            "required": ["name", "description", "level", "casting_time", "range_area", "components", "duration"],
-            "properties": {
-                "name": {
-                    "type": "string",
-                    "examples": ["Acid Splash"]
-                },
-                "description": {
-                    "type": "string",
-                    "input": "textarea"
-                },
-                "level": {
-                    "type": "string",
-                    "examples": ["Cantrip", "1", "2", "3", "4"]
-                },
-                "casting_time": {
-                    "type": "string",
-                    "default": "1 Action"
-                },
-                "range_area": {
-                    "type": "string",
-                    "examples": ["60ft", "Self"]
-                },
-                "components": {
-                    "type": "array",
-                    "items": {
-                        "type": "string",
-                        "enum": ["V", "S", "M", "F", "DF", "XP"]
-                    }
-                },
-                "duration": {
-                    "type": "string",
-                    "examples": ["Instantaneous"]
-                },
-                "school": {
-                    "type": "string",
-                    "examples": ["Conjuring"]
-                },
-                "attack_save": {
-                    "type": "string",
-                    "examples": ["DEX Save", "Ranged"]
-                },
-                "damage_effect": {
-                    "type": "string",
-                    "examples": ["Acid"]
-                },
-                "source": {
-                    "$ref": "#/definitions/source"
+                    "$ref": "source.json"
                 }
             }
         },
@@ -604,7 +547,7 @@
                     "input": "textarea"
                 },
                 "source": {
-                    "$ref": "#/definitions/source"
+                    "$ref": "source.json"
                 }
             }
         },
@@ -621,7 +564,7 @@
                     "input": "textarea"
                 },
                 "source": {
-                    "$ref": "#/definitions/source"
+                    "$ref": "source.json"
                 }
             }
         },
@@ -646,7 +589,7 @@
                     "input": "textarea"
                 },
                 "source": {
-                    "$ref": "#/definitions/source"
+                    "$ref": "source.json"
                 }
             }
         },
@@ -655,26 +598,6 @@
             "type": "string",
             "default": "none",
             "enum": ["none", "Piercing", "Slashing", "Bludgeoning", "Acid", "Cold", "Fire", "Force", "Lightning", "Necrotic", "Poison", "Psychic", "Radiant", "Thunder"]
-        },
-        "source": {
-            "$id": "#/definitions/source",
-            "type": "object",
-            "required": ["text"],
-            "properties": {
-                "text": {
-                    "type": "string",
-                    "examples": ["PHB p41", "Unearthed Arcana: The Artificer Revisited"]
-                },
-                "note": {
-                    "type": "string",
-                    "input": "textarea"
-                },
-                "href": {
-                    "type": "string",
-                    "format": "uri",
-                    "examples": ["https://media.wizards.com/2019/dnd/downloads/UA-Artificer-2019.pdf"]
-                }
-            }
         }
     }
 }
