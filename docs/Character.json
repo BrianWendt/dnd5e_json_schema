@@ -348,7 +348,7 @@
         "spells": {
             "type": "array",
             "items": {
-                "$ref": "https://brianwendt.github.io/dnd5e_json_schema/Spell.json"
+                "$ref": "Spell.json"
             }
         },
         "features": {

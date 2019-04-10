@@ -1,5 +1,6 @@
 const {exec} = require("child_process");
-const fs = require('fs');
+const fs = require("fs");
+const package = require("../package.json");
 
 const schemas = [
     "Character",
@@ -28,11 +29,15 @@ schemas.map(schema => {
 });
 
 // Generate the index.md based on _index.md file
-var index = fs.readFileSync(docs + "_index.md");
+var index = fs.readFileSync(docs + "_index.md").toString();
+index = index.replace(/%version%/g, package.version);
 
+var schemas_list = "";
 schemas.map(schema => {
-    index +=  ("\n - [%schema%.json](/%schema%.json) | [[documentation]](/%schema%.html)").replace(/%schema%/g, schema);
+    schemas_list +=  ("\n - <a href='/%schema%.json'>%schema%.json</a> | <a href='/%schema%.html'>[documentation]</a>").replace(/%schema%/g, schema);
 });
+
+index = index.replace(/%schemas%/g, schemas_list);
 
 fs.writeFile(docs + "index.md", index, (err) => {
     console.log("write index.md:", err || "no error");
