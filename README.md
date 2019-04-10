@@ -1,5 +1,5 @@
 # dnd5e_json_character
-Standardized JSON Schema for Dungeons &amp; Dragons 5th Edition characters.
+Standardized JSON Schemas for Dungeons &amp; Dragons 5th Edition.
 
 ## Helpful Links
 [JSON Schema](https://json-schema.org/)

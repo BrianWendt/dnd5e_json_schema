@@ -1,6 +1,36 @@
 {
-  "name": "dnd5e_json_character",
-  "version": "0.1.0",
-  "homepage": "https://github.com/BrianWendt/dnd5e_json_character",
-  "public": true
+   "name":"dnd5e_json_schema",
+   "author":"Brian Wendt (https://github.com/BrianWendt)",
+   "description":"Standardized Dungeons & Dragons JSON Schemas",
+   "keywords":[
+      "dnd",
+      "json-schema"
+   ],
+   "version":"0.1.1",
+   "repository":{
+      "type":"git",
+      "url":"https://github.com/BrianWendt/dnd5e_json_schema"
+   },
+   "homepage":"https://brianwendt.github.io/dnd5e_json_schema",
+   "public":true,
+   "dependencies":{
+      "bootprint":"^1.0.2",
+      "bootprint-json-schema":"^1.1.0"
+   },
+   "scripts":{
+      "doc":"node ./scripts/doc.js"
+   },
+   "licenses":[
+      {
+         "type":"GNU General Public License v3.0",
+         "url":"https://github.com/BrianWendt/dnd5e_json_schema/blob/master/LICENSE"
+      },
+      {
+         "type":"Open Game License",
+         "url":"http://www.opengamingfoundation.org/ogl.html"
+      }
+   ],
+   "bugs":{
+      "url":"https://github.com/BrianWendt/dnd5e_json_schema/issues"
+   }
 }
