@@ -348,6 +348,9 @@
                 "$ref": "damage_type.schema.json"
             }
         },
+        "image": {
+            "$ref": "image.schema.json"
+        },
         "source": {
             "$ref": "source.schema.json"
         }

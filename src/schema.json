@@ -4,7 +4,6 @@
   "title": "JSON Schema for D&D 5e",
   "description": "Standardized Dungeons & Dragons JSON Schemas",
   "$comment": "package version 0.1.2",
-    "$ref": "Monster.schema.json",
   "definitions": {
     "Character": {
       "$id": "Character.schema.json",
@@ -711,6 +710,9 @@
             "$ref": "damage_type.schema.json"
           }
         },
+        "image": {
+          "$ref": "image.schema.json"
+        },
         "source": {
           "$ref": "source.schema.json"
         }
@@ -1152,6 +1154,33 @@
         "description": {
           "type": "string",
           "input": "textarea"
+        },
+        "source": {
+          "$ref": "source.schema.json"
+        }
+      }
+    },
+    "image": {
+      "$id": "dice.schema.json",
+      "title": "JSON Schema for images.",
+      "description": "This schema describes an image asset.",
+      "$comment": "version 0.1.1",
+      "type": "object",
+      "required": [
+        "src",
+        "alt"
+      ],
+      "properties": {
+        "uri": {
+          "type": "uri"
+        },
+        "alt": {
+          "type": "string",
+          "description": "The text to display if image cannot load. `alt` should describe the image generally."
+        },
+        "caption": {
+          "type": "string",
+          "description": "The text to display below the image."
         },
         "source": {
           "$ref": "source.schema.json"

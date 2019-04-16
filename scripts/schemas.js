@@ -12,6 +12,7 @@ const schemas = [
     "equipment",
     "feat",
     "feature",
+    "image",
     "item",
     "senses",
     "source",

@@ -1,0 +1,25 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "dice.schema.json",
+    "title": "JSON Schema for images.",
+    "description": "This schema describes an image asset.",
+    "$comment": "version 0.1.1",
+    "type": "object",
+    "required": ["src", "alt"],
+    "properties": {
+        "uri": {
+            "type": "uri"
+        },
+        "alt": {
+            "type": "string",
+            "description": "The text to display if image cannot load. `alt` should describe the image generally."
+        },
+        "caption": {
+            "type": "string",
+            "description": "The text to display below the image."
+        },
+        "source": {
+            "$ref": "source.schema.json"
+        }
+    }
+}
