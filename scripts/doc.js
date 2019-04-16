@@ -1,13 +1,7 @@
 const {exec} = require("child_process");
 const fs = require("fs");
 const package = require("../package.json");
-
-const schemas = [
-    "Character",
-    "Spell",
-    "tags",
-    "source"
-];
+const {schemas} = require("./schemas.js");
 
 function copyFile(file, destination){
     fs.copyFileSync(file, destination);
@@ -34,7 +28,7 @@ index = index.replace(/%version%/g, package.version);
 
 var schemas_list = "";
 schemas.map(schema => {
-    schemas_list +=  ("\n - <a href='./%schema%.json'>%schema%.json</a> | <a href='./%schema%.html'>[documentation]</a>").replace(/%schema%/g, schema);
+    schemas_list +=  ("\n - <a href='./%schema%.json' target='_blank'>%schema%.json</a> | <a href='./%schema%.html' target='_blank'>[documentation]</a>").replace(/%schema%/g, schema);
 });
 
 index = index.replace(/%schemas%/g, schemas_list);

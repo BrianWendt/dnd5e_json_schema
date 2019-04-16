@@ -1,0 +1,40 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "action.schema.json",
+    "title": "JSON Schema for D&D 5e Creature action.",
+    "description": "This schema describes an action the creature/character may use.",
+    "$comment": "version 0.1.1",
+    "type": "object",
+    "required": ["name", "description"],
+    "properties": {
+        "name": {
+            "type": "string"
+        },
+        "description": {
+            "type": "string",
+            "input": "textarea"
+        },
+        "attack_bonus": {
+            "type": "integer",
+            "default": 0
+        },
+        "damage_dice": {
+            "$ref": "dice.schema.json"
+        },
+        "damage_bonus": {
+            "type": "integer",
+            "default": 0
+        },
+        "legendary": {
+            "type": "boolean",
+            "default": "false"
+        },
+        "reaction": {
+            "type": "boolean",
+            "default": "false"
+        },
+        "source": {
+            "$ref": "source.schema.json"
+        }
+    }
+}

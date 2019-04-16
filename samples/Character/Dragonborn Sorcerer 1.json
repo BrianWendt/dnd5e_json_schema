@@ -3,14 +3,46 @@
     "player": "You",
     "race": {
         "name": "Dragonborn",
-        "subtype": "Silver"
+        "subtype": "Silver",
+        "traits": [
+            {
+                "name": "Damage Resistance - Cold",
+                "description": "You have resistance to the damage type associated with your draconic ancestry."
+            },
+            {
+                "name": "Dragon Ancestor",
+                "description": "Whenever you make a Charisma check when interacting with dragons, your proficiency is doubled if it applies to the check."
+            }
+        ]
     },
     "classes": [{
             "name": "Sorcerer",
             "subtype": "Draconic Ancestor",
             "level": 1,
             "hit_die": "d6",
-            "spellcasting": "cha"
+            "spellcasting": "cha",
+            "features": [
+                {
+                    "name": "Spellcasting",
+                    "description": "To cast a spell, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest."
+                },
+                {
+                    "name": "Draconic Resilience",
+                    "description": "As magic flows through your body, it causes physical traits of your dragon ancestor to emerge. Your hit point maximum increases by 1 at 1st level and whenever you gain a sorcerer level.\nAdditionally, parts of your body are covered by a thin sheen of dragonlike scales. When you aren't wearing armor, your AC equals 13 + your Dexterity modifier."
+                },
+                {
+                    "name": "Elemental Affinity",
+                    "description": "Starting at 6th level, when you cast a spell that deals damage of the type associated with your draconic ancestry, you can add your Charisma modifier to one damage roll of that spell. At the same time, you can spend 1 sorcery point to gain resistance to that damage type for 1 hour."
+                },
+                {
+                    "name": "Dragon Wings",
+                    "description": "At 14th level, you gain the ability to sprout a pair of dragon wings from your back, gaining a flying speed equal to your current speed. You can create these wings as a bonus action on your turn. They last until you dismiss them as a bonus action on your turn.\nYou can't manifest your wings while wearing armor unless the armor is made to accommodate them, and clothing not made to accommodate your wings might be destroyed when you manifest them."
+                },
+                {
+                    "name": "Draconic Presence",
+                    "description": "Beginning at 18th level, you can channel the dread presence of your dragon ancestor, causing those around you to become awestruck or frightened. As an action, you can spend 5 sorcery points to draw on this power and exude an aura of awe or fear (your choice) to a distance of 60 feet. For 1 minute or until you lose your concentration (as if you were casting a concentration spell), each hostile creature that starts its turn in this aura must succeed on a Wisdom saving throw or be charmed (if you chose awe) or frightened (if you chose fear) until the aura ends. A creature that succeeds on this saving throw is immune to your aura for 24 hours."
+                }
+            ]
         }],
     "alignment": "neutral good",
     "speed": ["30 ft."],
@@ -43,7 +75,7 @@
     "background": {
         "name": "Outlander"
     },
-    "description": {
+    "details": {
         "personality": "You once ran 25 miles to warn your clan of an approaching threat, and you'd do the same again.",
         "ideal": "To dishonor yourself is to dishonor the clan.",
         "bond": "Your clan is the most important thing in your life, even when they are far from you.",
@@ -99,38 +131,5 @@
             "components": ["S"],
             "school": "Divination "
         }
-    ],
-    "traits": [
-        {
-            "name": "Dragon Ancestor",
-            "description": "Whenever you make a Charisma check when interacting with dragons, your proficiency is doubled if it applies to the check."
-        },
-        {
-            "name": "Damage Resistance - Cold",
-            "description": "You have resistance to the damage type associated with your draconic ancestry."
-        }
-    ],
-    "features": [
-        {
-            "name": "Spellcasting",
-            "description": "To cast a spell, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest."
-        },
-        {
-            "name": "Draconic Resilience",
-            "description": "As magic flows through your body, it causes physical traits of your dragon ancestor to emerge. Your hit point maximum increases by 1 at 1st level and whenever you gain a sorcerer level.\nAdditionally, parts of your body are covered by a thin sheen of dragonlike scales. When you aren't wearing armor, your AC equals 13 + your Dexterity modifier."
-        },
-        {
-            "name": "Elemental Affinity",
-            "description": "Starting at 6th level, when you cast a spell that deals damage of the type associated with your draconic ancestry, you can add your Charisma modifier to one damage roll of that spell. At the same time, you can spend 1 sorcery point to gain resistance to that damage type for 1 hour."
-        },
-        {
-            "name": "Dragon Wings",
-            "description": "At 14th level, you gain the ability to sprout a pair of dragon wings from your back, gaining a flying speed equal to your current speed. You can create these wings as a bonus action on your turn. They last until you dismiss them as a bonus action on your turn.\nYou can't manifest your wings while wearing armor unless the armor is made to accommodate them, and clothing not made to accommodate your wings might be destroyed when you manifest them."
-        },
-        {
-            "name": "Draconic Presence",
-            "description": "Beginning at 18th level, you can channel the dread presence of your dragon ancestor, causing those around you to become awestruck or frightened. As an action, you can spend 5 sorcery points to draw on this power and exude an aura of awe or fear (your choice) to a distance of 60 feet. For 1 minute or until you lose your concentration (as if you were casting a concentration spell), each hostile creature that starts its turn in this aura must succeed on a Wisdom saving throw or be charmed (if you chose awe) or frightened (if you chose fear) until the aura ends. A creature that succeeds on this saving throw is immune to your aura for 24 hours."
-        }
-        
     ]
 }

@@ -1,0 +1,44 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "Race.schema.json",
+    "title": "D&D 5e Race",
+    "description": "JSON Schema for D&D 5e Creature Race.",
+    "$comment": "version 0.1.1",
+    "type": "object",
+    "required": ["name"],
+    "properties": {
+        "name": {
+            "type": "string",
+            "examples": ["Dragonborn"]
+        },
+        "subtype": {
+            "type": "string",
+            "examples": ["Silver"]
+        },
+        "size": {
+            "type": "string",
+            "default": "Medium",
+            "enum": ["Tiny", "Small", "Medium", "Large", "Huge", "Gargantuan"]
+        },
+        "traits": {
+            "type": "array",
+            "items": {
+                "$ref": "feature.schema.json",
+                "examples": ["Amphibious"]
+            }
+        },
+        "actions": {
+            "type": "array",
+            "description": "Special actions gained by race/race-subtype.",
+            "items": {
+                "$ref": "action.schema.json"
+            }
+        },
+        "senses": {
+            "$ref": "senses.schema.json"
+        },
+        "source": {
+            "$ref": "source.schema.json"
+        }
+    }
+}

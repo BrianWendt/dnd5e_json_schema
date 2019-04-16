@@ -1,0 +1,16 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "equipment.schema.json",
+    "title": "JSON Schema for D&D 5e equiment.",
+    "description": "This schema describes an equipment item. The schema extends item.schema.json",
+    "$comment": "version 0.1.1",
+    "type": "object",
+    "allOf": [{"$ref": "item.schema.json"}],
+    "required": [],
+    "properties": {
+        "quantity": {
+            "type": "integer",
+            "default": 0
+        }
+    }
+}

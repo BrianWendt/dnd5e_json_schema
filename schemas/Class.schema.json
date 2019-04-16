@@ -1,0 +1,39 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "Class.schema.json",
+    "title": "D&D 5e Class",
+    "description": "JSON Schema for D&D 5e Character Class.",
+    "$comment": "version 0.1.1",
+    "type": "object",
+    "required": ["name", "level"],
+    "properties": {
+        "name": {
+            "type": "string"
+        },
+        "level": {
+            "type": "integer",
+            "minimum": 1
+        },
+        "subtype": {
+            "type": "string"
+        },
+        "hit_die": {
+            "type": "string",
+            "enum": ["d4", "d6", "d8", "d10", "d12", "d20"]
+        },
+        "spellcasting": {
+            "type": "string",
+            "default": "",
+            "enum": ["", "str", "dex", "con", "int", "wis", "cha"]
+        },
+        "features": {
+            "type": "array",
+            "items": {
+                "$ref": "feature.schema.json"
+            }
+        },
+        "source": {
+            "$ref": "source.schema.json"
+        }
+    }
+}

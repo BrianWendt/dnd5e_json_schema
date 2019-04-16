@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "Spell.json",
+    "$id": "Spell.schema.json",
     "description": "This schema describes a 5e spell. <br/>Samples may be found at https://github.com/BrianWendt/dnd5e_json_schema/tree/master/samples/Spell/",
     "$comment": "version 0.1.1",
     "type": "object",
@@ -65,11 +65,11 @@
             "examples": ["Acid"]
         },
         "tags": {
-            "$ref": "tags.json",
+            "$ref": "tag.schema.json",
             "examples": ["Bard", "Wizard", "Warlock"]
         },
         "source": {
-            "$ref": "source.json"
+            "$ref": "source.schema.json"
         }
     }
 }

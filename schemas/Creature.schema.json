@@ -1,0 +1,355 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "Creature.schema.json",
+    "title": "D&D 5e Creature",
+    "description": "JSON Schema for D&D 5e Creature data. Some data, such as ability score modifiers, are not included because they are extrapolated.<br/> Samples may be found at https://github.com/BrianWendt/dnd5e_json_schema/tree/master/samples/Monsters/",
+    "$comment": "version 0.1.1",
+    "type": "object",
+    "required": ["name", "speed", "type", "subtype"],
+    "properties": {
+        "name": {
+            "type": "string"
+        },
+        "alignment": {
+            "type": "string"
+        },
+        "speed": {
+            "type": "object",
+            "description": "Speeds in feet.",
+            "properties": {
+                "Walk": {
+                    "type": "integer",
+                    "default": 0
+                },
+                "Burrow": {
+                    "type": ["integer", "boolean"],
+                    "default": "false"
+                },
+                "Climb": {
+                    "type": ["integer", "boolean"],
+                    "default": 0
+                },
+                "Fly": {
+                    "type": ["integer", "boolean"],
+                    "default": "false"
+                },
+                "Hover": {
+                    "type": "boolean",
+                    "default": "false"
+                },
+                "Swim": {
+                    "type": ["integer", "boolean"],
+                    "default": 0
+                }
+            },
+            "description": "Speed in feet"
+        },
+        "hit_points": {
+            "type": "object",
+            "properties": {
+                "max": {
+                    "type": "integer",
+                    "default": 0
+                },
+                "current": {
+                    "type": "integer"
+                },
+                "temporary": {
+                    "type": "integer"
+                },
+                "dice": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "dice.schema.json"
+                    }
+                },
+                "description": {
+                    "type": "string"
+                }
+            }
+        },
+
+        "inspiration": {
+            "type": "string"
+        },
+
+        "skills": {
+            "type": "object",
+            "properties": {
+                "Athletics": {
+                    "type": ["boolean", "integer"],
+                    "default": "false"
+                },
+                "Acrobatics": {
+                    "type": ["boolean", "integer"],
+                    "default": "false"
+                },
+                "SleightOfHand": {
+                    "type": ["boolean", "integer"],
+                    "default": "false"
+                },
+                "Stealth": {
+                    "type": ["boolean", "integer"],
+                    "default": "false"
+                },
+                "Arcana": {
+                    "type": ["boolean", "integer"],
+                    "default": "false"
+                },
+                "History": {
+                    "type": ["boolean", "integer"],
+                    "default": "false"
+                },
+                "Investigation": {
+                    "type": ["boolean", "integer"],
+                    "default": "false"
+                },
+                "Nature": {
+                    "type": ["boolean", "integer"],
+                    "default": "false"
+                },
+                "Religion": {
+                    "type": ["boolean", "integer"],
+                    "default": "false"
+                },
+                "AnimalHandling": {
+                    "type": ["boolean", "integer"],
+                    "default": "false"
+                },
+                "Insight": {
+                    "type": ["boolean", "integer"],
+                    "default": "false"
+                },
+                "Medicine": {
+                    "type": ["boolean", "integer"],
+                    "default": "false"
+                },
+                "Perception": {
+                    "type": ["boolean", "integer"],
+                    "default": "false"
+                },
+                "Survival": {
+                    "type": ["boolean", "integer"],
+                    "default": "false"
+                },
+                "Deception": {
+                    "type": ["boolean", "integer"],
+                    "default": "false"
+                },
+                "Intimidation": {
+                    "type": ["boolean", "integer"],
+                    "default": "false"
+                },
+                "Performance": {
+                    "type": ["boolean", "integer"],
+                    "default": "false"
+                },
+                "Persuasion": {
+                    "type": ["boolean", "integer"],
+                    "default": "false"
+                }
+            }
+        },
+        "languages": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "examples": ["Common", "Abyssal", "Draconic", "Dwarvish", "Elven"]
+            }
+        },
+        "ability_scores": {
+            "type": "object",
+            "required": ["str", "dex", "con", "int", "wis", "cha"],
+            "properties": {
+                "str": {
+                    "type": "integer",
+                    "default": 10,
+                    "minimum": 0,
+                    "description": "Strength"
+                },
+                "dex": {
+                    "type": "integer",
+                    "default": 10,
+                    "minimum": 0,
+                    "description": "Dexterty"
+                },
+                "con": {
+                    "type": "integer",
+                    "default": 10,
+                    "minimum": 0,
+                    "description": "Constitution"
+                },
+                "int": {
+                    "type": "integer",
+                    "default": 10,
+                    "minimum": 0,
+                    "description": "Intelligence"
+                },
+                "wis": {
+                    "type": "integer",
+                    "default": 10,
+                    "minimum": 0,
+                    "description": "Wisdom"
+                },
+                "cha": {
+                    "type": "integer",
+                    "default": 10,
+                    "minimum": 0,
+                    "description": "Charisma"
+                }
+            }
+        },
+        "saving_throws": {
+            "type": "object",
+            "properties": {
+                "str": {
+                    "type": ["boolean", "integer"],
+                    "default": "false"
+                },
+                "dex": {
+                    "type": ["boolean", "integer"],
+                    "default": "false"
+                },
+                "con": {
+                    "type": ["boolean", "integer"],
+                    "default": "false"
+                },
+                "int": {
+                    "type": ["boolean", "integer"],
+                    "default": "false"
+                },
+                "wis": {
+                    "type": ["boolean", "integer"],
+                    "default": "false"
+                },
+                "cha": {
+                    "type": ["boolean", "integer"],
+                    "default": "false"
+                }
+            }
+        },
+        "senses": {
+            "$ref": "senses.schema.json"
+        },
+        "description": {
+            "type": "string",
+            "input": "textarea"
+        },
+        "armor_class": {
+            "type": "object",
+            "properties": {
+                "value": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "default": 10
+                },
+                "description": {
+                    "type": "string",
+                    "default": "Unarmored"
+                }
+            }
+        },
+        "shield": {
+            "type": "boolean",
+            "default": "false",
+            "description": "Toggle if shield is being used."
+        },
+        "condtions": {
+            "type": "object",
+            "properties": {
+                "Blinded": {
+                    "type": "boolean",
+                    "default": "false"
+                },
+                "Charmed": {
+                    "type": "boolean",
+                    "default": "false"
+                },
+                "Deafened": {
+                    "type": "boolean",
+                    "default": "false"
+                },
+                "Exhaustion": {
+                    "type": "boolean",
+                    "default": "false"
+                },
+                "Frightened": {
+                    "type": "boolean",
+                    "default": "false"
+                },
+                "Grappled": {
+                    "type": "boolean",
+                    "default": "false"
+                },
+                "Incapacitated": {
+                    "type": "boolean",
+                    "default": "false"
+                },
+                "Invisible": {
+                    "type": "boolean",
+                    "default": "false"
+                },
+                "Necrotic": {
+                    "type": "boolean",
+                    "default": "false"
+                },
+                "Paralyzed": {
+                    "type": "boolean",
+                    "default": "false"
+                },
+                "Petrified": {
+                    "type": "boolean",
+                    "default": "false"
+                },
+                "Poisoned": {
+                    "type": "boolean",
+                    "default": "false"
+                },
+                "Prone": {
+                    "type": "boolean",
+                    "default": "false"
+                },
+                "Restrained": {
+                    "type": "boolean",
+                    "default": "false"
+                },
+                "Stunned": {
+                    "type": "boolean",
+                    "default": "false"
+                },
+                "Unconscious": {
+                    "type": "boolean",
+                    "default": "false"
+                }
+            }
+        },
+        "condition_immunities": {
+            "type": "array",
+            "items": {
+                "$ref": "conditions.schema.json"
+            }
+        },
+        
+        "damage_immunities": {
+            "type": "array",
+            "items": {
+                "$ref": "damage_type.schema.json"
+            }
+        },
+        "damage_resistances": {
+            "type": "array",
+            "items": {
+                "$ref": "damage_type.schema.json"
+            }
+        },
+        "damage_vulnerabilities": {
+            "type": "array",
+            "items": {
+                "$ref": "damage_type.schema.json"
+            }
+        },
+        "source": {
+            "$ref": "source.schema.json"
+        }
+    }
+}
