@@ -1,6 +1,8 @@
 {
     "name": "Sample Dragonborn Sorcerer",
-    "player": "You",
+    "player": {
+        "name": "You"
+    },
     "race": {
         "name": "Dragonborn",
         "subtype": "Silver",
@@ -19,7 +21,7 @@
             "name": "Sorcerer",
             "subtype": "Draconic Ancestor",
             "level": 1,
-            "hit_die": "d6",
+            "hit_die": 6,
             "spellcasting": "cha",
             "features": [
                 {
@@ -45,9 +47,12 @@
             ]
         }],
     "alignment": "neutral good",
-    "speed": ["30 ft."],
+    "speed": {
+        "Walk": 30
+    },
     "hit_points": {
-        "max": 9
+        "max": 9,
+        "current": 5
     },
     "ability_scores": {
         "str": 10,
@@ -83,18 +88,38 @@
     },
     "weapons": [
         {
-            "name": "Quarterstaf",
-            "stat": "str",
-            "damage": "1d8",
-            "damage_type": "Bludgeoning",
-            "equipped": true
+            "name": "Quarterstaff",
+            "damage": {
+                "dice": {
+                    "sides": 6,
+                    "count": 1
+                },
+                "type": "Bludgeoning"
+            },
+            "equipped": true,
+            "properties": {
+                "Versatile": true
+            }
         },
         {
             "name": "Dagger",
-            "damage": "1d4+1",
-            "damage_type": "Piercing",
-            "stat": "dex",
-            "props": ["Thrown (range 20/60)"]
+            "damage": {
+                "dice": {
+                    "sides": 4,
+                    "count": 1,
+                    "mod": 1
+                },
+                "type": "Piercing"
+            },
+            "throw_range": {
+                "short": 20,
+                "long": 60
+            },
+            "properties": {
+                "Finesse": true,
+                "Light": true,
+                "Thrown": true
+            }
         }
     ],
     "spells": [
@@ -129,7 +154,7 @@
             "duration": "1 Round",
             "damage_effect": "Foreknowledge",
             "components": ["S"],
-            "school": "Divination "
+            "school": "Divination"
         }
     ]
 }
