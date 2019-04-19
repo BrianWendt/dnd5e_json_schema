@@ -8,10 +8,11 @@
     "allOf": [{
             "$ref": "Creature.schema.json"
         }],
-    "required": ["size"],
+    "required": ["size", "type", "subtype"],
     "properties": {
         "size": {
             "type": "string",
+            "input": "dropdown",
             "enum": ["Tiny", "Small", "Medium", "Large", "Huge", "Gargantuan"]
         },
         "challenge_rating": {
@@ -20,7 +21,8 @@
         },
         "type": {
             "type": "string",
-            "enum": ["Aberration", "Beast", "Celestial", "Construct", "Dragon", "Elemental", "Fey", "Fiend", "Giant", "Humanoid", "Monstrosity", "Ooze", "Plant", "Undead"]
+            "input": "dropdown",
+            "enum": ["Aberration", "Beast", "Celestial", "Construct", "Dragon", "Elemental", "Fey", "Fiend", "Giant", "Humanoid", "Monstrosity", "Ooze", "Plant", "Undead", "Swarm of Tiny beasts"]
         },
         "subtype": {
             "type": "string",

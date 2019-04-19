@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "dice.schema.json",
+    "$id": "image.schema.json",
     "title": "JSON Schema for images.",
     "description": "This schema describes an image asset.",
     "$comment": "version 0.1.1",
@@ -8,7 +8,8 @@
     "required": ["src", "alt"],
     "properties": {
         "uri": {
-            "type": "uri"
+            "type": "string",
+            "format": "uri"
         },
         "alt": {
             "type": "string",

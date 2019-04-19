@@ -18,8 +18,8 @@
             "type": "string"
         },
         "hit_die": {
-            "type": "string",
-            "enum": ["d4", "d6", "d8", "d10", "d12", "d20"]
+            "type": "integer",
+            "enum": [1, 2, 4, 6, 8, 10, 12, 20]
         },
         "spellcasting": {
             "type": "string",
