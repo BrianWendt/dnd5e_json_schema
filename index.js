@@ -1,0 +1,21 @@
+module.exports = {
+    Character: require("./schemas/Character.schema.json"),
+    Class: require("./schemas/Class.schema.json"),
+    Creature: require("./schemas/Creature.schema.json"),
+    Monster: require("./schemas/Monster.schema.json"),
+    Race: require("./schemas/Race.schema.json"),
+    Spell: require("./schemas/Spell.schema.json"),
+    action: require("./schemas/action.schema.json"),
+    damage_type: require("./schemas/damage_type.schema.json"),
+    dice: require("./schemas/dice.schema.json"),
+    conditions: require("./schemas/conditions.schema.json"),
+    equipment: require("./schemas/equipment.schema.json"),
+    feat: require("./schemas/feat.schema.json"),
+    feature: require("./schemas/feature.schema.json"),
+    image: require("./schemas/image.schema.json"),
+    item: require("./schemas/item.schema.json"),
+    senses: require("./schemas/senses.schema.json"),
+    source: require("./schemas/source.schema.json"),
+    tag: require("./schemas/tag.schema.json"),
+    weapon: require("./schemas/weapon.schema.json")
+};

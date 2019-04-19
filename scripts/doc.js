@@ -2,37 +2,43 @@ const {exec} = require("child_process");
 const fs = require("fs");
 const package = require("../package.json");
 const {schemas} = require("./schemas.js");
+const {JSONSchemaMarkdown} = require('json-schema-md-doc');
 
-function copyFile(file, destination){
-    fs.copyFileSync(file, destination);
-        console.log("copied " + file + " to " + destination);
-}
+class MyDoccer extends JSONSchemaMarkdown {
+    refLink(ref){
+        if(ref.substring(0, 4).toLowerCase() !== "http"){
+            ref += '.md';
+        }
+        return ref;
+    }
+};
+const Doccer = new MyDoccer();
 
-const docs = "docs/";
+var index = {
+    "title": "dnd5e_json_schemas Documentation",
+    "description": "Visit the GitHub project @ [BrianWendt/dnd5e_json_schema](https://github.com/BrianWendt/dnd5e_json_schema)",
+    "$comment": "package version `" + package.version + "`",
+    "definitions": {}
+};
+
+const schemaDir = "../schemas/";
+const docsDir = "./docs/";
 schemas.map(schema => {
-    const destination = docs + schema + '/';
-    const schemaFile = schema + ".json";
-    // generate documentation for the schema.
-    exec("bootprint json-schema " + schemaFile + " " + destination, (err) => {
-        console.log("doc " + schemaFile + ": ", err || "no errors");
-        // Copy the Schema to the docs/ folder for github.io use
-        copyFile(schemaFile, docs + schemaFile);
-        // copy and rename the index file to root of docs
-        copyFile(destination + "index.html", docs + schema + ".html");
-    });
+    const schemaFileName = schema + '.schema.json';
+    const schemaPath = schemaDir + schemaFileName;
+    const json = require(schemaPath);
+    Doccer.load(json);
+    Doccer.generate();
+    fs.writeFileSync(docsDir + schemaFileName + '.md', Doccer.markdown);
+    
+    index.definitions[schema] = {
+        "title": json.title,
+        "description": json.description,
+        "$ref": schemaFileName
+    }
 });
 
-// Generate the index.md based on _index.md file
-var index = fs.readFileSync(docs + "_index.md").toString();
-index = index.replace(/%version%/g, package.version);
+Doccer.load(index);
+Doccer.generate();
 
-var schemas_list = "";
-schemas.map(schema => {
-    schemas_list +=  ("\n - <a href='./%schema%.json' target='_blank'>%schema%.json</a> | <a href='./%schema%.html' target='_blank'>[documentation]</a>").replace(/%schema%/g, schema);
-});
-
-index = index.replace(/%schemas%/g, schemas_list);
-
-fs.writeFile(docs + "index.md", index, (err) => {
-    console.log("write index.md:", err || "no error");
-});
+fs.writeFileSync(docsDir + 'index.md', Doccer.markdown);

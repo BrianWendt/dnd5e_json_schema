@@ -3,12 +3,12 @@
   "$id": "schema.json",
   "title": "JSON Schema for D&D 5e",
   "description": "Standardized Dungeons & Dragons JSON Schemas",
-  "$comment": "package version 0.1.2",
+  "$comment": "package version 0.1.3",
   "definitions": {
     "Character": {
       "$id": "Character.schema.json",
       "title": "D&D 5e Character",
-      "description": "JSON Schema for D&D 5e Character data. Extends Creature.schema.json",
+      "description": "JSON Schema for D&D 5e Character data. Extends Creature.schema.json<br>Samples may be found on [GitHub](https://github.com/BrianWendt/dnd5e_json_schema/tree/master/samples/Character)",
       "$comment": "version 0.1.1",
       "type": "object",
       "allOf": [
@@ -229,14 +229,16 @@
           "type": "string"
         },
         "hit_die": {
-          "type": "string",
+          "type": "integer",
           "enum": [
-            "d4",
-            "d6",
-            "d8",
-            "d10",
-            "d12",
-            "d20"
+            1,
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            20
           ]
         },
         "spellcasting": {
@@ -266,14 +268,15 @@
     "Creature": {
       "$id": "Creature.schema.json",
       "title": "D&D 5e Creature",
-      "description": "JSON Schema for D&D 5e Creature data. Some data, such as ability score modifiers, are not included because they are extrapolated.<br/> Samples may be found at https://github.com/BrianWendt/dnd5e_json_schema/tree/master/samples/Monsters/",
+      "description": "JSON Schema for D&D 5e Creature data. Some data, such as ability score modifiers, are not included because they are extrapolated.<br/>Samples may be found on [GitHub](https://github.com/BrianWendt/dnd5e_json_schema/tree/master/samples/Monster/)",
       "$comment": "version 0.1.1",
       "type": "object",
       "required": [
         "name",
         "speed",
-        "type",
-        "subtype"
+        "hit_points",
+        "ability_scores",
+        "armor_class"
       ],
       "properties": {
         "name": {
@@ -353,6 +356,7 @@
         },
         "skills": {
           "type": "object",
+          "additionalProperties": false,
           "properties": {
             "Athletics": {
               "type": [
@@ -730,11 +734,14 @@
         }
       ],
       "required": [
-        "size"
+        "size",
+        "type",
+        "subtype"
       ],
       "properties": {
         "size": {
           "type": "string",
+          "input": "dropdown",
           "enum": [
             "Tiny",
             "Small",
@@ -756,6 +763,7 @@
         },
         "type": {
           "type": "string",
+          "input": "dropdown",
           "enum": [
             "Aberration",
             "Beast",
@@ -770,7 +778,8 @@
             "Monstrosity",
             "Ooze",
             "Plant",
-            "Undead"
+            "Undead",
+            "Swarm of Tiny beasts"
           ]
         },
         "subtype": {
@@ -1161,7 +1170,7 @@
       }
     },
     "image": {
-      "$id": "dice.schema.json",
+      "$id": "image.schema.json",
       "title": "JSON Schema for images.",
       "description": "This schema describes an image asset.",
       "$comment": "version 0.1.1",
@@ -1172,7 +1181,8 @@
       ],
       "properties": {
         "uri": {
-          "type": "uri"
+          "type": "string",
+          "format": "uri"
         },
         "alt": {
           "type": "string",
@@ -1188,7 +1198,7 @@
       }
     },
     "item": {
-      "$id": "*******.schema.json",
+      "$id": "item.schema.json",
       "title": "JSON Schema for D&D 5e physical item.",
       "description": "This schema describes physical item.",
       "$comment": "version 0.1.1",
@@ -1220,30 +1230,43 @@
     "senses": {
       "$id": "senses.schema.json",
       "title": "JSON Schema for D&D 5e senses.",
-      "description": "This schema describes a list of senses.",
+      "description": "This schema describes a list of senses. Passive Perception should not be included as it is a standard sense.",
       "$comment": "version 0.1.1",
       "type": "object",
       "required": [],
+      "additionalProperties": false,
       "properties": {
         "Blindsight": {
-          "type": "string",
-          "default": "",
-          "description": "A monster with blindsight can perceive its surroundings without relying on sight, within a specific radius.\nCreatures without eyes, such as grimlocks and gray oozes, typically have this special sense, as do creatures with echolocation or heightened senses, such as bats and true dragons.\nIf a monster is naturally blind, it has a parenthetical note to this effect, indicating that the radius of its blindsight defines the maximum range of its perception."
+          "type": [
+            "boolean",
+            "string"
+          ],
+          "default": false,
+          "description": "`false` or provide Blindsight trait text."
         },
         "Darkvision": {
-          "type": "string",
-          "default": "",
-          "description": "A monster with darkvision can see in the dark within a specific radius. The monster can see in dim light within the radius as if it were bright light, and in darkness as if it were dim light. The monster can't discern color in darkness, only shades of gray. Many creatures that live underground have this special sense."
+          "type": [
+            "boolean",
+            "string"
+          ],
+          "default": false,
+          "description": "`false` or provide Darkvision trait text."
         },
         "Tremorsense": {
-          "type": "string",
-          "default": "",
-          "description": "A monster with tremorsense can detect and pinpoint the origin of vibrations within a specific radius, provided that the monster and the source of the vibrations are in contact with the same ground or substance.\nTremorsense can't be used to detect flying or incorporeal creatures. Many burrowing creatures, such as ankhegs, have this special sense."
+          "type": [
+            "boolean",
+            "string"
+          ],
+          "default": false,
+          "description": "`false` or provide Tremorsense trait text."
         },
         "Truesight": {
-          "type": "string",
-          "default": "",
-          "description": "A monster with truesight can, out to a specific range, see in normal and magical darkness, see invisible creatures and objects, automatically detect visual illusions and succeed on saving throws against them, and perceive the original form of a shapechanger or a creature that is transformed by magic. Furthermore, the monster can see into the Ethereal Plane within the same range."
+          "type": [
+            "boolean",
+            "string"
+          ],
+          "default": false,
+          "description": "`false` or provide Truesight trait text."
         }
       }
     },
