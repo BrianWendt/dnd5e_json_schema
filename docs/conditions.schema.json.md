@@ -1,10 +1,17 @@
 # JSON Schema for D&D 5e conditions.
+
 &#36;schema: [http://json-schema.org/draft-07/schema#](http://json-schema.org/draft-07/schema#)
+
 <b id="conditions.schema.json">&#36;id: conditions.schema.json</b>
+
 _This schema describes a list of conditions._
+
 &#36;comment: _version 0.1.1_
+
 Type: `string`
+
 Enum Values: 
+
  1. _"Blinded"_
  2. _"Charmed"_
  3. _"Deafened"_

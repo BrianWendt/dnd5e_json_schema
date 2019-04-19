@@ -1,264 +1,514 @@
 # D&D 5e Creature
+
 &#36;schema: [http://json-schema.org/draft-07/schema#](http://json-schema.org/draft-07/schema#)
+
 <b id="creature.schema.json">&#36;id: Creature.schema.json</b>
+
 _JSON Schema for D&D 5e Creature data. Some data, such as ability score modifiers, are not included because they are extrapolated.<br/>Samples may be found on [GitHub](https://github.com/BrianWendt/dnd5e_json_schema/tree/master/samples/Monster/)_
+
 &#36;comment: _version 0.1.1_
+
 Type: `object`
+
 **_Properties_**
- - **name** `required`
+
+ - <i id="/properties/name">name</i> `required`
+	 - <i id="/properties/name">path: /properties/name</i>
 	 - Type: `string`
- - **alignment**
+ - <i id="/properties/alignment">alignment</i>
+	 - <i id="/properties/alignment">path: /properties/alignment</i>
 	 - Type: `string`
- - **speed** `required`
+ - <i id="/properties/speed">speed</i> `required`
+	 - <i id="/properties/speed">path: /properties/speed</i>
 	 - _Speed in feet_
 	 - Type: `object`
 	 - **_Properties_**
-		 - **speed&thinsp;.&thinsp;Walk**
+		 - <i id="/properties/speed/properties/Walk">speed&thinsp;.&thinsp;Walk</i>
+			 - <i id="/properties/speed/properties/Walk">path: /properties/speed/properties/Walk</i>
 			 - Type: `integer`
 			 - Default: `0`
-		 - **speed&thinsp;.&thinsp;Burrow**
+		 - <i id="/properties/speed/properties/Burrow">speed&thinsp;.&thinsp;Burrow</i>
+			 - <i id="/properties/speed/properties/Burrow">path: /properties/speed/properties/Burrow</i>
 			 - Types: `integer`, `boolean`
 			 - Default: _false_
-		 - **speed&thinsp;.&thinsp;Climb**
+		 - <i id="/properties/speed/properties/Climb">speed&thinsp;.&thinsp;Climb</i>
+			 - <i id="/properties/speed/properties/Climb">path: /properties/speed/properties/Climb</i>
 			 - Types: `integer`, `boolean`
 			 - Default: `0`
-		 - **speed&thinsp;.&thinsp;Fly**
+		 - <i id="/properties/speed/properties/Fly">speed&thinsp;.&thinsp;Fly</i>
+			 - <i id="/properties/speed/properties/Fly">path: /properties/speed/properties/Fly</i>
 			 - Types: `integer`, `boolean`
 			 - Default: _false_
-		 - **speed&thinsp;.&thinsp;Hover**
+		 - <i id="/properties/speed/properties/Hover">speed&thinsp;.&thinsp;Hover</i>
+			 - <i id="/properties/speed/properties/Hover">path: /properties/speed/properties/Hover</i>
 			 - Type: `boolean`
 			 - Default: _false_
-		 - **speed&thinsp;.&thinsp;Swim**
+		 - <i id="/properties/speed/properties/Swim">speed&thinsp;.&thinsp;Swim</i>
+			 - <i id="/properties/speed/properties/Swim">path: /properties/speed/properties/Swim</i>
 			 - Types: `integer`, `boolean`
 			 - Default: `0`
- - **hit_points** `required`
+ - <i id="/properties/hit_points">hit_points</i> `required`
+	 - <i id="/properties/hit_points">path: /properties/hit_points</i>
 	 - Type: `object`
 	 - **_Properties_**
-		 - **hit_points&thinsp;.&thinsp;max**
+		 - <i id="/properties/hit_points/properties/max">hit_points&thinsp;.&thinsp;max</i>
+			 - <i id="/properties/hit_points/properties/max">path: /properties/hit_points/properties/max</i>
 			 - Type: `integer`
 			 - Default: `0`
-		 - **hit_points&thinsp;.&thinsp;current**
+		 - <i id="/properties/hit_points/properties/current">hit_points&thinsp;.&thinsp;current</i>
+			 - <i id="/properties/hit_points/properties/current">path: /properties/hit_points/properties/current</i>
 			 - Type: `integer`
-		 - **hit_points&thinsp;.&thinsp;temporary**
+		 - <i id="/properties/hit_points/properties/temporary">hit_points&thinsp;.&thinsp;temporary</i>
+			 - <i id="/properties/hit_points/properties/temporary">path: /properties/hit_points/properties/temporary</i>
 			 - Type: `integer`
-		 - **hit_points&thinsp;.&thinsp;dice**
+		 - <i id="/properties/hit_points/properties/dice">hit_points&thinsp;.&thinsp;dice</i>
+			 - <i id="/properties/hit_points/properties/dice">path: /properties/hit_points/properties/dice</i>
 			 - Type: `array`
 				 - **_Items_**
+				 - <i id="/properties/hit_points/properties/dice/items">path: /properties/hit_points/properties/dice/items</i>
 				 - &#36;ref: [dice.schema.json](dice.schema.json.md)
-		 - **hit_points&thinsp;.&thinsp;description**
+		 - <i id="/properties/hit_points/properties/description">hit_points&thinsp;.&thinsp;description</i>
+			 - <i id="/properties/hit_points/properties/description">path: /properties/hit_points/properties/description</i>
 			 - Type: `string`
- - **inspiration**
+ - <i id="/properties/inspiration">inspiration</i>
+	 - <i id="/properties/inspiration">path: /properties/inspiration</i>
 	 - Type: `string`
- - **skills**
+ - <i id="/properties/skills">skills</i>
+	 - <i id="/properties/skills">path: /properties/skills</i>
 	 - Type: `object`
 	 - Additional Properties: `false`
 	 - **_Properties_**
-		 - **skills&thinsp;.&thinsp;Athletics**
+		 - <i id="/properties/skills/properties/Athletics">skills&thinsp;.&thinsp;Athletics</i>
+			 - <i id="/properties/skills/properties/Athletics">path: /properties/skills/properties/Athletics</i>
 			 - Types: `boolean`, `integer`
 			 - Default: _false_
-		 - **skills&thinsp;.&thinsp;Acrobatics**
+		 - <i id="/properties/skills/properties/Acrobatics">skills&thinsp;.&thinsp;Acrobatics</i>
+			 - <i id="/properties/skills/properties/Acrobatics">path: /properties/skills/properties/Acrobatics</i>
 			 - Types: `boolean`, `integer`
 			 - Default: _false_
-		 - **skills&thinsp;.&thinsp;SleightOfHand**
+		 - <i id="/properties/skills/properties/SleightOfHand">skills&thinsp;.&thinsp;SleightOfHand</i>
+			 - <i id="/properties/skills/properties/SleightOfHand">path: /properties/skills/properties/SleightOfHand</i>
 			 - Types: `boolean`, `integer`
 			 - Default: _false_
-		 - **skills&thinsp;.&thinsp;Stealth**
+		 - <i id="/properties/skills/properties/Stealth">skills&thinsp;.&thinsp;Stealth</i>
+			 - <i id="/properties/skills/properties/Stealth">path: /properties/skills/properties/Stealth</i>
 			 - Types: `boolean`, `integer`
 			 - Default: _false_
-		 - **skills&thinsp;.&thinsp;Arcana**
+		 - <i id="/properties/skills/properties/Arcana">skills&thinsp;.&thinsp;Arcana</i>
+			 - <i id="/properties/skills/properties/Arcana">path: /properties/skills/properties/Arcana</i>
 			 - Types: `boolean`, `integer`
 			 - Default: _false_
-		 - **skills&thinsp;.&thinsp;History**
+		 - <i id="/properties/skills/properties/History">skills&thinsp;.&thinsp;History</i>
+			 - <i id="/properties/skills/properties/History">path: /properties/skills/properties/History</i>
 			 - Types: `boolean`, `integer`
 			 - Default: _false_
-		 - **skills&thinsp;.&thinsp;Investigation**
+		 - <i id="/properties/skills/properties/Investigation">skills&thinsp;.&thinsp;Investigation</i>
+			 - <i id="/properties/skills/properties/Investigation">path: /properties/skills/properties/Investigation</i>
 			 - Types: `boolean`, `integer`
 			 - Default: _false_
-		 - **skills&thinsp;.&thinsp;Nature**
+		 - <i id="/properties/skills/properties/Nature">skills&thinsp;.&thinsp;Nature</i>
+			 - <i id="/properties/skills/properties/Nature">path: /properties/skills/properties/Nature</i>
 			 - Types: `boolean`, `integer`
 			 - Default: _false_
-		 - **skills&thinsp;.&thinsp;Religion**
+		 - <i id="/properties/skills/properties/Religion">skills&thinsp;.&thinsp;Religion</i>
+			 - <i id="/properties/skills/properties/Religion">path: /properties/skills/properties/Religion</i>
 			 - Types: `boolean`, `integer`
 			 - Default: _false_
-		 - **skills&thinsp;.&thinsp;AnimalHandling**
+		 - <i id="/properties/skills/properties/AnimalHandling">skills&thinsp;.&thinsp;AnimalHandling</i>
+			 - <i id="/properties/skills/properties/AnimalHandling">path: /properties/skills/properties/AnimalHandling</i>
 			 - Types: `boolean`, `integer`
 			 - Default: _false_
-		 - **skills&thinsp;.&thinsp;Insight**
+		 - <i id="/properties/skills/properties/Insight">skills&thinsp;.&thinsp;Insight</i>
+			 - <i id="/properties/skills/properties/Insight">path: /properties/skills/properties/Insight</i>
 			 - Types: `boolean`, `integer`
 			 - Default: _false_
-		 - **skills&thinsp;.&thinsp;Medicine**
+		 - <i id="/properties/skills/properties/Medicine">skills&thinsp;.&thinsp;Medicine</i>
+			 - <i id="/properties/skills/properties/Medicine">path: /properties/skills/properties/Medicine</i>
 			 - Types: `boolean`, `integer`
 			 - Default: _false_
-		 - **skills&thinsp;.&thinsp;Perception**
+		 - <i id="/properties/skills/properties/Perception">skills&thinsp;.&thinsp;Perception</i>
+			 - <i id="/properties/skills/properties/Perception">path: /properties/skills/properties/Perception</i>
 			 - Types: `boolean`, `integer`
 			 - Default: _false_
-		 - **skills&thinsp;.&thinsp;Survival**
+		 - <i id="/properties/skills/properties/Survival">skills&thinsp;.&thinsp;Survival</i>
+			 - <i id="/properties/skills/properties/Survival">path: /properties/skills/properties/Survival</i>
 			 - Types: `boolean`, `integer`
 			 - Default: _false_
-		 - **skills&thinsp;.&thinsp;Deception**
+		 - <i id="/properties/skills/properties/Deception">skills&thinsp;.&thinsp;Deception</i>
+			 - <i id="/properties/skills/properties/Deception">path: /properties/skills/properties/Deception</i>
 			 - Types: `boolean`, `integer`
 			 - Default: _false_
-		 - **skills&thinsp;.&thinsp;Intimidation**
+		 - <i id="/properties/skills/properties/Intimidation">skills&thinsp;.&thinsp;Intimidation</i>
+			 - <i id="/properties/skills/properties/Intimidation">path: /properties/skills/properties/Intimidation</i>
 			 - Types: `boolean`, `integer`
 			 - Default: _false_
-		 - **skills&thinsp;.&thinsp;Performance**
+		 - <i id="/properties/skills/properties/Performance">skills&thinsp;.&thinsp;Performance</i>
+			 - <i id="/properties/skills/properties/Performance">path: /properties/skills/properties/Performance</i>
 			 - Types: `boolean`, `integer`
 			 - Default: _false_
-		 - **skills&thinsp;.&thinsp;Persuasion**
+		 - <i id="/properties/skills/properties/Persuasion">skills&thinsp;.&thinsp;Persuasion</i>
+			 - <i id="/properties/skills/properties/Persuasion">path: /properties/skills/properties/Persuasion</i>
 			 - Types: `boolean`, `integer`
 			 - Default: _false_
- - **languages**
+ - <i id="/properties/languages">languages</i>
+	 - <i id="/properties/languages">path: /properties/languages</i>
 	 - Type: `array`
 		 - **_Items_**
+		 - <i id="/properties/languages/items">path: /properties/languages/items</i>
 		 - Type: `string`
-		 - Examples: 
+Examples: 		 - # D&D 5e Creature
+
+&#36;schema: [http://json-schema.org/draft-07/schema#](http://json-schema.org/draft-07/schema#)
+
+<b id="creature.schema.json">&#36;id: Creature.schema.json</b>
+
+_JSON Schema for D&D 5e Creature data. Some data, such as ability score modifiers, are not included because they are extrapolated.<br/>Samples may be found on [GitHub](https://github.com/BrianWendt/dnd5e_json_schema/tree/master/samples/Monster/)_
+
+&#36;comment: _version 0.1.1_
+
+Type: `object`
+
+**_Properties_**
+
+ - <i id="/properties/name">name</i> `required`
+	 - <i id="/properties/name">path: /properties/name</i>
+	 - Type: `string`
+ - <i id="/properties/alignment">alignment</i>
+	 - <i id="/properties/alignment">path: /properties/alignment</i>
+	 - Type: `string`
+ - <i id="/properties/speed">speed</i> `required`
+	 - <i id="/properties/speed">path: /properties/speed</i>
+	 - _Speed in feet_
+	 - Type: `object`
+	 - **_Properties_**
+		 - <i id="/properties/speed/properties/Walk">speed&thinsp;.&thinsp;Walk</i>
+			 - <i id="/properties/speed/properties/Walk">path: /properties/speed/properties/Walk</i>
+			 - Type: `integer`
+			 - Default: `0`
+		 - <i id="/properties/speed/properties/Burrow">speed&thinsp;.&thinsp;Burrow</i>
+			 - <i id="/properties/speed/properties/Burrow">path: /properties/speed/properties/Burrow</i>
+			 - Types: `integer`, `boolean`
+			 - Default: _false_
+		 - <i id="/properties/speed/properties/Climb">speed&thinsp;.&thinsp;Climb</i>
+			 - <i id="/properties/speed/properties/Climb">path: /properties/speed/properties/Climb</i>
+			 - Types: `integer`, `boolean`
+			 - Default: `0`
+		 - <i id="/properties/speed/properties/Fly">speed&thinsp;.&thinsp;Fly</i>
+			 - <i id="/properties/speed/properties/Fly">path: /properties/speed/properties/Fly</i>
+			 - Types: `integer`, `boolean`
+			 - Default: _false_
+		 - <i id="/properties/speed/properties/Hover">speed&thinsp;.&thinsp;Hover</i>
+			 - <i id="/properties/speed/properties/Hover">path: /properties/speed/properties/Hover</i>
+			 - Type: `boolean`
+			 - Default: _false_
+		 - <i id="/properties/speed/properties/Swim">speed&thinsp;.&thinsp;Swim</i>
+			 - <i id="/properties/speed/properties/Swim">path: /properties/speed/properties/Swim</i>
+			 - Types: `integer`, `boolean`
+			 - Default: `0`
+ - <i id="/properties/hit_points">hit_points</i> `required`
+	 - <i id="/properties/hit_points">path: /properties/hit_points</i>
+	 - Type: `object`
+	 - **_Properties_**
+		 - <i id="/properties/hit_points/properties/max">hit_points&thinsp;.&thinsp;max</i>
+			 - <i id="/properties/hit_points/properties/max">path: /properties/hit_points/properties/max</i>
+			 - Type: `integer`
+			 - Default: `0`
+		 - <i id="/properties/hit_points/properties/current">hit_points&thinsp;.&thinsp;current</i>
+			 - <i id="/properties/hit_points/properties/current">path: /properties/hit_points/properties/current</i>
+			 - Type: `integer`
+		 - <i id="/properties/hit_points/properties/temporary">hit_points&thinsp;.&thinsp;temporary</i>
+			 - <i id="/properties/hit_points/properties/temporary">path: /properties/hit_points/properties/temporary</i>
+			 - Type: `integer`
+		 - <i id="/properties/hit_points/properties/dice">hit_points&thinsp;.&thinsp;dice</i>
+			 - <i id="/properties/hit_points/properties/dice">path: /properties/hit_points/properties/dice</i>
+			 - Type: `array`
+				 - **_Items_**
+				 - <i id="/properties/hit_points/properties/dice/items">path: /properties/hit_points/properties/dice/items</i>
+				 - &#36;ref: [dice.schema.json](dice.schema.json.md)
+		 - <i id="/properties/hit_points/properties/description">hit_points&thinsp;.&thinsp;description</i>
+			 - <i id="/properties/hit_points/properties/description">path: /properties/hit_points/properties/description</i>
+			 - Type: `string`
+ - <i id="/properties/inspiration">inspiration</i>
+	 - <i id="/properties/inspiration">path: /properties/inspiration</i>
+	 - Type: `string`
+ - <i id="/properties/skills">skills</i>
+	 - <i id="/properties/skills">path: /properties/skills</i>
+	 - Type: `object`
+	 - Additional Properties: `false`
+	 - **_Properties_**
+		 - <i id="/properties/skills/properties/Athletics">skills&thinsp;.&thinsp;Athletics</i>
+			 - <i id="/properties/skills/properties/Athletics">path: /properties/skills/properties/Athletics</i>
+			 - Types: `boolean`, `integer`
+			 - Default: _false_
+		 - <i id="/properties/skills/properties/Acrobatics">skills&thinsp;.&thinsp;Acrobatics</i>
+			 - <i id="/properties/skills/properties/Acrobatics">path: /properties/skills/properties/Acrobatics</i>
+			 - Types: `boolean`, `integer`
+			 - Default: _false_
+		 - <i id="/properties/skills/properties/SleightOfHand">skills&thinsp;.&thinsp;SleightOfHand</i>
+			 - <i id="/properties/skills/properties/SleightOfHand">path: /properties/skills/properties/SleightOfHand</i>
+			 - Types: `boolean`, `integer`
+			 - Default: _false_
+		 - <i id="/properties/skills/properties/Stealth">skills&thinsp;.&thinsp;Stealth</i>
+			 - <i id="/properties/skills/properties/Stealth">path: /properties/skills/properties/Stealth</i>
+			 - Types: `boolean`, `integer`
+			 - Default: _false_
+		 - <i id="/properties/skills/properties/Arcana">skills&thinsp;.&thinsp;Arcana</i>
+			 - <i id="/properties/skills/properties/Arcana">path: /properties/skills/properties/Arcana</i>
+			 - Types: `boolean`, `integer`
+			 - Default: _false_
+		 - <i id="/properties/skills/properties/History">skills&thinsp;.&thinsp;History</i>
+			 - <i id="/properties/skills/properties/History">path: /properties/skills/properties/History</i>
+			 - Types: `boolean`, `integer`
+			 - Default: _false_
+		 - <i id="/properties/skills/properties/Investigation">skills&thinsp;.&thinsp;Investigation</i>
+			 - <i id="/properties/skills/properties/Investigation">path: /properties/skills/properties/Investigation</i>
+			 - Types: `boolean`, `integer`
+			 - Default: _false_
+		 - <i id="/properties/skills/properties/Nature">skills&thinsp;.&thinsp;Nature</i>
+			 - <i id="/properties/skills/properties/Nature">path: /properties/skills/properties/Nature</i>
+			 - Types: `boolean`, `integer`
+			 - Default: _false_
+		 - <i id="/properties/skills/properties/Religion">skills&thinsp;.&thinsp;Religion</i>
+			 - <i id="/properties/skills/properties/Religion">path: /properties/skills/properties/Religion</i>
+			 - Types: `boolean`, `integer`
+			 - Default: _false_
+		 - <i id="/properties/skills/properties/AnimalHandling">skills&thinsp;.&thinsp;AnimalHandling</i>
+			 - <i id="/properties/skills/properties/AnimalHandling">path: /properties/skills/properties/AnimalHandling</i>
+			 - Types: `boolean`, `integer`
+			 - Default: _false_
+		 - <i id="/properties/skills/properties/Insight">skills&thinsp;.&thinsp;Insight</i>
+			 - <i id="/properties/skills/properties/Insight">path: /properties/skills/properties/Insight</i>
+			 - Types: `boolean`, `integer`
+			 - Default: _false_
+		 - <i id="/properties/skills/properties/Medicine">skills&thinsp;.&thinsp;Medicine</i>
+			 - <i id="/properties/skills/properties/Medicine">path: /properties/skills/properties/Medicine</i>
+			 - Types: `boolean`, `integer`
+			 - Default: _false_
+		 - <i id="/properties/skills/properties/Perception">skills&thinsp;.&thinsp;Perception</i>
+			 - <i id="/properties/skills/properties/Perception">path: /properties/skills/properties/Perception</i>
+			 - Types: `boolean`, `integer`
+			 - Default: _false_
+		 - <i id="/properties/skills/properties/Survival">skills&thinsp;.&thinsp;Survival</i>
+			 - <i id="/properties/skills/properties/Survival">path: /properties/skills/properties/Survival</i>
+			 - Types: `boolean`, `integer`
+			 - Default: _false_
+		 - <i id="/properties/skills/properties/Deception">skills&thinsp;.&thinsp;Deception</i>
+			 - <i id="/properties/skills/properties/Deception">path: /properties/skills/properties/Deception</i>
+			 - Types: `boolean`, `integer`
+			 - Default: _false_
+		 - <i id="/properties/skills/properties/Intimidation">skills&thinsp;.&thinsp;Intimidation</i>
+			 - <i id="/properties/skills/properties/Intimidation">path: /properties/skills/properties/Intimidation</i>
+			 - Types: `boolean`, `integer`
+			 - Default: _false_
+		 - <i id="/properties/skills/properties/Performance">skills&thinsp;.&thinsp;Performance</i>
+			 - <i id="/properties/skills/properties/Performance">path: /properties/skills/properties/Performance</i>
+			 - Types: `boolean`, `integer`
+			 - Default: _false_
+		 - <i id="/properties/skills/properties/Persuasion">skills&thinsp;.&thinsp;Persuasion</i>
+			 - <i id="/properties/skills/properties/Persuasion">path: /properties/skills/properties/Persuasion</i>
+			 - Types: `boolean`, `integer`
+			 - Default: _false_
+ - <i id="/properties/languages">languages</i>
+	 - <i id="/properties/languages">path: /properties/languages</i>
+	 - Type: `array`
+		 - **_Items_**
+		 - <i id="/properties/languages/items">path: /properties/languages/items</i>
+		 - Type: `string`
+Examples: 
 			 1. _"Common"_
 			 2. _"Abyssal"_
 			 3. _"Draconic"_
 			 4. _"Dwarvish"_
 			 5. _"Elven"_
- - **ability_scores** `required`
+ - <i id="/properties/ability_scores">ability_scores</i> `required`
+	 - <i id="/properties/ability_scores">path: /properties/ability_scores</i>
 	 - Type: `object`
 	 - **_Properties_**
-		 - **ability_scores&thinsp;.&thinsp;str**
+		 - <i id="/properties/ability_scores/properties/str">ability_scores&thinsp;.&thinsp;str</i>
+			 - <i id="/properties/ability_scores/properties/str">path: /properties/ability_scores/properties/str</i>
 			 - _Strength_
 			 - Type: `integer`
 			 - Default: `10`
 			 - Range:  &ge; 0
-		 - **ability_scores&thinsp;.&thinsp;dex**
+		 - <i id="/properties/ability_scores/properties/dex">ability_scores&thinsp;.&thinsp;dex</i>
+			 - <i id="/properties/ability_scores/properties/dex">path: /properties/ability_scores/properties/dex</i>
 			 - _Dexterty_
 			 - Type: `integer`
 			 - Default: `10`
 			 - Range:  &ge; 0
-		 - **ability_scores&thinsp;.&thinsp;con**
+		 - <i id="/properties/ability_scores/properties/con">ability_scores&thinsp;.&thinsp;con</i>
+			 - <i id="/properties/ability_scores/properties/con">path: /properties/ability_scores/properties/con</i>
 			 - _Constitution_
 			 - Type: `integer`
 			 - Default: `10`
 			 - Range:  &ge; 0
-		 - **ability_scores&thinsp;.&thinsp;int**
+		 - <i id="/properties/ability_scores/properties/int">ability_scores&thinsp;.&thinsp;int</i>
+			 - <i id="/properties/ability_scores/properties/int">path: /properties/ability_scores/properties/int</i>
 			 - _Intelligence_
 			 - Type: `integer`
 			 - Default: `10`
 			 - Range:  &ge; 0
-		 - **ability_scores&thinsp;.&thinsp;wis**
+		 - <i id="/properties/ability_scores/properties/wis">ability_scores&thinsp;.&thinsp;wis</i>
+			 - <i id="/properties/ability_scores/properties/wis">path: /properties/ability_scores/properties/wis</i>
 			 - _Wisdom_
 			 - Type: `integer`
 			 - Default: `10`
 			 - Range:  &ge; 0
-		 - **ability_scores&thinsp;.&thinsp;cha**
+		 - <i id="/properties/ability_scores/properties/cha">ability_scores&thinsp;.&thinsp;cha</i>
+			 - <i id="/properties/ability_scores/properties/cha">path: /properties/ability_scores/properties/cha</i>
 			 - _Charisma_
 			 - Type: `integer`
 			 - Default: `10`
 			 - Range:  &ge; 0
- - **saving_throws**
+ - <i id="/properties/saving_throws">saving_throws</i>
+	 - <i id="/properties/saving_throws">path: /properties/saving_throws</i>
 	 - Type: `object`
 	 - **_Properties_**
-		 - **saving_throws&thinsp;.&thinsp;str**
+		 - <i id="/properties/saving_throws/properties/str">saving_throws&thinsp;.&thinsp;str</i>
+			 - <i id="/properties/saving_throws/properties/str">path: /properties/saving_throws/properties/str</i>
 			 - Types: `boolean`, `integer`
 			 - Default: _false_
-		 - **saving_throws&thinsp;.&thinsp;dex**
+		 - <i id="/properties/saving_throws/properties/dex">saving_throws&thinsp;.&thinsp;dex</i>
+			 - <i id="/properties/saving_throws/properties/dex">path: /properties/saving_throws/properties/dex</i>
 			 - Types: `boolean`, `integer`
 			 - Default: _false_
-		 - **saving_throws&thinsp;.&thinsp;con**
+		 - <i id="/properties/saving_throws/properties/con">saving_throws&thinsp;.&thinsp;con</i>
+			 - <i id="/properties/saving_throws/properties/con">path: /properties/saving_throws/properties/con</i>
 			 - Types: `boolean`, `integer`
 			 - Default: _false_
-		 - **saving_throws&thinsp;.&thinsp;int**
+		 - <i id="/properties/saving_throws/properties/int">saving_throws&thinsp;.&thinsp;int</i>
+			 - <i id="/properties/saving_throws/properties/int">path: /properties/saving_throws/properties/int</i>
 			 - Types: `boolean`, `integer`
 			 - Default: _false_
-		 - **saving_throws&thinsp;.&thinsp;wis**
+		 - <i id="/properties/saving_throws/properties/wis">saving_throws&thinsp;.&thinsp;wis</i>
+			 - <i id="/properties/saving_throws/properties/wis">path: /properties/saving_throws/properties/wis</i>
 			 - Types: `boolean`, `integer`
 			 - Default: _false_
-		 - **saving_throws&thinsp;.&thinsp;cha**
+		 - <i id="/properties/saving_throws/properties/cha">saving_throws&thinsp;.&thinsp;cha</i>
+			 - <i id="/properties/saving_throws/properties/cha">path: /properties/saving_throws/properties/cha</i>
 			 - Types: `boolean`, `integer`
 			 - Default: _false_
- - **senses**
+ - <i id="/properties/senses">senses</i>
+	 - <i id="/properties/senses">path: /properties/senses</i>
 	 - &#36;ref: [senses.schema.json](senses.schema.json.md)
- - **description**
+ - <i id="/properties/description">description</i>
+	 - <i id="/properties/description">path: /properties/description</i>
 	 - Type: `string`
- - **armor_class** `required`
+ - <i id="/properties/armor_class">armor_class</i> `required`
+	 - <i id="/properties/armor_class">path: /properties/armor_class</i>
 	 - Type: `object`
 	 - **_Properties_**
-		 - **armor_class&thinsp;.&thinsp;value**
+		 - <i id="/properties/armor_class/properties/value">armor_class&thinsp;.&thinsp;value</i>
+			 - <i id="/properties/armor_class/properties/value">path: /properties/armor_class/properties/value</i>
 			 - Type: `integer`
 			 - Default: `10`
 			 - Range:  &ge; 0
-		 - **armor_class&thinsp;.&thinsp;description**
+		 - <i id="/properties/armor_class/properties/description">armor_class&thinsp;.&thinsp;description</i>
+			 - <i id="/properties/armor_class/properties/description">path: /properties/armor_class/properties/description</i>
 			 - Type: `string`
 			 - Default: _"Unarmored"_
- - **shield**
+ - <i id="/properties/shield">shield</i>
+	 - <i id="/properties/shield">path: /properties/shield</i>
 	 - _Toggle if shield is being used._
 	 - Type: `boolean`
 	 - Default: _false_
- - **condtions**
+ - <i id="/properties/condtions">condtions</i>
+	 - <i id="/properties/condtions">path: /properties/condtions</i>
 	 - Type: `object`
 	 - **_Properties_**
-		 - **condtions&thinsp;.&thinsp;Blinded**
+		 - <i id="/properties/condtions/properties/Blinded">condtions&thinsp;.&thinsp;Blinded</i>
+			 - <i id="/properties/condtions/properties/Blinded">path: /properties/condtions/properties/Blinded</i>
 			 - Type: `boolean`
 			 - Default: _false_
-		 - **condtions&thinsp;.&thinsp;Charmed**
+		 - <i id="/properties/condtions/properties/Charmed">condtions&thinsp;.&thinsp;Charmed</i>
+			 - <i id="/properties/condtions/properties/Charmed">path: /properties/condtions/properties/Charmed</i>
 			 - Type: `boolean`
 			 - Default: _false_
-		 - **condtions&thinsp;.&thinsp;Deafened**
+		 - <i id="/properties/condtions/properties/Deafened">condtions&thinsp;.&thinsp;Deafened</i>
+			 - <i id="/properties/condtions/properties/Deafened">path: /properties/condtions/properties/Deafened</i>
 			 - Type: `boolean`
 			 - Default: _false_
-		 - **condtions&thinsp;.&thinsp;Exhaustion**
+		 - <i id="/properties/condtions/properties/Exhaustion">condtions&thinsp;.&thinsp;Exhaustion</i>
+			 - <i id="/properties/condtions/properties/Exhaustion">path: /properties/condtions/properties/Exhaustion</i>
 			 - Type: `boolean`
 			 - Default: _false_
-		 - **condtions&thinsp;.&thinsp;Frightened**
+		 - <i id="/properties/condtions/properties/Frightened">condtions&thinsp;.&thinsp;Frightened</i>
+			 - <i id="/properties/condtions/properties/Frightened">path: /properties/condtions/properties/Frightened</i>
 			 - Type: `boolean`
 			 - Default: _false_
-		 - **condtions&thinsp;.&thinsp;Grappled**
+		 - <i id="/properties/condtions/properties/Grappled">condtions&thinsp;.&thinsp;Grappled</i>
+			 - <i id="/properties/condtions/properties/Grappled">path: /properties/condtions/properties/Grappled</i>
 			 - Type: `boolean`
 			 - Default: _false_
-		 - **condtions&thinsp;.&thinsp;Incapacitated**
+		 - <i id="/properties/condtions/properties/Incapacitated">condtions&thinsp;.&thinsp;Incapacitated</i>
+			 - <i id="/properties/condtions/properties/Incapacitated">path: /properties/condtions/properties/Incapacitated</i>
 			 - Type: `boolean`
 			 - Default: _false_
-		 - **condtions&thinsp;.&thinsp;Invisible**
+		 - <i id="/properties/condtions/properties/Invisible">condtions&thinsp;.&thinsp;Invisible</i>
+			 - <i id="/properties/condtions/properties/Invisible">path: /properties/condtions/properties/Invisible</i>
 			 - Type: `boolean`
 			 - Default: _false_
-		 - **condtions&thinsp;.&thinsp;Necrotic**
+		 - <i id="/properties/condtions/properties/Necrotic">condtions&thinsp;.&thinsp;Necrotic</i>
+			 - <i id="/properties/condtions/properties/Necrotic">path: /properties/condtions/properties/Necrotic</i>
 			 - Type: `boolean`
 			 - Default: _false_
-		 - **condtions&thinsp;.&thinsp;Paralyzed**
+		 - <i id="/properties/condtions/properties/Paralyzed">condtions&thinsp;.&thinsp;Paralyzed</i>
+			 - <i id="/properties/condtions/properties/Paralyzed">path: /properties/condtions/properties/Paralyzed</i>
 			 - Type: `boolean`
 			 - Default: _false_
-		 - **condtions&thinsp;.&thinsp;Petrified**
+		 - <i id="/properties/condtions/properties/Petrified">condtions&thinsp;.&thinsp;Petrified</i>
+			 - <i id="/properties/condtions/properties/Petrified">path: /properties/condtions/properties/Petrified</i>
 			 - Type: `boolean`
 			 - Default: _false_
-		 - **condtions&thinsp;.&thinsp;Poisoned**
+		 - <i id="/properties/condtions/properties/Poisoned">condtions&thinsp;.&thinsp;Poisoned</i>
+			 - <i id="/properties/condtions/properties/Poisoned">path: /properties/condtions/properties/Poisoned</i>
 			 - Type: `boolean`
 			 - Default: _false_
-		 - **condtions&thinsp;.&thinsp;Prone**
+		 - <i id="/properties/condtions/properties/Prone">condtions&thinsp;.&thinsp;Prone</i>
+			 - <i id="/properties/condtions/properties/Prone">path: /properties/condtions/properties/Prone</i>
 			 - Type: `boolean`
 			 - Default: _false_
-		 - **condtions&thinsp;.&thinsp;Restrained**
+		 - <i id="/properties/condtions/properties/Restrained">condtions&thinsp;.&thinsp;Restrained</i>
+			 - <i id="/properties/condtions/properties/Restrained">path: /properties/condtions/properties/Restrained</i>
 			 - Type: `boolean`
 			 - Default: _false_
-		 - **condtions&thinsp;.&thinsp;Stunned**
+		 - <i id="/properties/condtions/properties/Stunned">condtions&thinsp;.&thinsp;Stunned</i>
+			 - <i id="/properties/condtions/properties/Stunned">path: /properties/condtions/properties/Stunned</i>
 			 - Type: `boolean`
 			 - Default: _false_
-		 - **condtions&thinsp;.&thinsp;Unconscious**
+		 - <i id="/properties/condtions/properties/Unconscious">condtions&thinsp;.&thinsp;Unconscious</i>
+			 - <i id="/properties/condtions/properties/Unconscious">path: /properties/condtions/properties/Unconscious</i>
 			 - Type: `boolean`
 			 - Default: _false_
- - **condition_immunities**
+ - <i id="/properties/condition_immunities">condition_immunities</i>
+	 - <i id="/properties/condition_immunities">path: /properties/condition_immunities</i>
 	 - Type: `array`
 		 - **_Items_**
+		 - <i id="/properties/condition_immunities/items">path: /properties/condition_immunities/items</i>
 		 - &#36;ref: [conditions.schema.json](conditions.schema.json.md)
- - **damage_immunities**
+ - <i id="/properties/damage_immunities">damage_immunities</i>
+	 - <i id="/properties/damage_immunities">path: /properties/damage_immunities</i>
 	 - Type: `array`
 		 - **_Items_**
+		 - <i id="/properties/damage_immunities/items">path: /properties/damage_immunities/items</i>
 		 - &#36;ref: [damage_type.schema.json](damage_type.schema.json.md)
- - **damage_resistances**
+ - <i id="/properties/damage_resistances">damage_resistances</i>
+	 - <i id="/properties/damage_resistances">path: /properties/damage_resistances</i>
 	 - Type: `array`
 		 - **_Items_**
+		 - <i id="/properties/damage_resistances/items">path: /properties/damage_resistances/items</i>
 		 - &#36;ref: [damage_type.schema.json](damage_type.schema.json.md)
- - **damage_vulnerabilities**
+ - <i id="/properties/damage_vulnerabilities">damage_vulnerabilities</i>
+	 - <i id="/properties/damage_vulnerabilities">path: /properties/damage_vulnerabilities</i>
 	 - Type: `array`
 		 - **_Items_**
+		 - <i id="/properties/damage_vulnerabilities/items">path: /properties/damage_vulnerabilities/items</i>
 		 - &#36;ref: [damage_type.schema.json](damage_type.schema.json.md)
- - **image**
+ - <i id="/properties/image">image</i>
+	 - <i id="/properties/image">path: /properties/image</i>
 	 - &#36;ref: [image.schema.json](image.schema.json.md)
- - **source**
+ - <i id="/properties/source">source</i>
+	 - <i id="/properties/source">path: /properties/source</i>
 	 - &#36;ref: [source.schema.json](source.schema.json.md)
 
 _Generated with [json-schema-md-doc](https://brianwendt.github.io/json-schema-md-doc/)_
