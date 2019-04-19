@@ -1,0 +1,264 @@
+# D&D 5e Creature
+&#36;schema: [http://json-schema.org/draft-07/schema#](http://json-schema.org/draft-07/schema#)
+<b id="creature.schema.json">&#36;id: Creature.schema.json</b>
+_JSON Schema for D&D 5e Creature data. Some data, such as ability score modifiers, are not included because they are extrapolated.<br/>Samples may be found on [GitHub](https://github.com/BrianWendt/dnd5e_json_schema/tree/master/samples/Monster/)_
+&#36;comment: _version 0.1.1_
+Type: `object`
+**_Properties_**
+ - **name** `required`
+	 - Type: `string`
+ - **alignment**
+	 - Type: `string`
+ - **speed** `required`
+	 - _Speed in feet_
+	 - Type: `object`
+	 - **_Properties_**
+		 - **speed&thinsp;.&thinsp;Walk**
+			 - Type: `integer`
+			 - Default: `0`
+		 - **speed&thinsp;.&thinsp;Burrow**
+			 - Types: `integer`, `boolean`
+			 - Default: _false_
+		 - **speed&thinsp;.&thinsp;Climb**
+			 - Types: `integer`, `boolean`
+			 - Default: `0`
+		 - **speed&thinsp;.&thinsp;Fly**
+			 - Types: `integer`, `boolean`
+			 - Default: _false_
+		 - **speed&thinsp;.&thinsp;Hover**
+			 - Type: `boolean`
+			 - Default: _false_
+		 - **speed&thinsp;.&thinsp;Swim**
+			 - Types: `integer`, `boolean`
+			 - Default: `0`
+ - **hit_points** `required`
+	 - Type: `object`
+	 - **_Properties_**
+		 - **hit_points&thinsp;.&thinsp;max**
+			 - Type: `integer`
+			 - Default: `0`
+		 - **hit_points&thinsp;.&thinsp;current**
+			 - Type: `integer`
+		 - **hit_points&thinsp;.&thinsp;temporary**
+			 - Type: `integer`
+		 - **hit_points&thinsp;.&thinsp;dice**
+			 - Type: `array`
+				 - **_Items_**
+				 - &#36;ref: [dice.schema.json](dice.schema.json.md)
+		 - **hit_points&thinsp;.&thinsp;description**
+			 - Type: `string`
+ - **inspiration**
+	 - Type: `string`
+ - **skills**
+	 - Type: `object`
+	 - Additional Properties: `false`
+	 - **_Properties_**
+		 - **skills&thinsp;.&thinsp;Athletics**
+			 - Types: `boolean`, `integer`
+			 - Default: _false_
+		 - **skills&thinsp;.&thinsp;Acrobatics**
+			 - Types: `boolean`, `integer`
+			 - Default: _false_
+		 - **skills&thinsp;.&thinsp;SleightOfHand**
+			 - Types: `boolean`, `integer`
+			 - Default: _false_
+		 - **skills&thinsp;.&thinsp;Stealth**
+			 - Types: `boolean`, `integer`
+			 - Default: _false_
+		 - **skills&thinsp;.&thinsp;Arcana**
+			 - Types: `boolean`, `integer`
+			 - Default: _false_
+		 - **skills&thinsp;.&thinsp;History**
+			 - Types: `boolean`, `integer`
+			 - Default: _false_
+		 - **skills&thinsp;.&thinsp;Investigation**
+			 - Types: `boolean`, `integer`
+			 - Default: _false_
+		 - **skills&thinsp;.&thinsp;Nature**
+			 - Types: `boolean`, `integer`
+			 - Default: _false_
+		 - **skills&thinsp;.&thinsp;Religion**
+			 - Types: `boolean`, `integer`
+			 - Default: _false_
+		 - **skills&thinsp;.&thinsp;AnimalHandling**
+			 - Types: `boolean`, `integer`
+			 - Default: _false_
+		 - **skills&thinsp;.&thinsp;Insight**
+			 - Types: `boolean`, `integer`
+			 - Default: _false_
+		 - **skills&thinsp;.&thinsp;Medicine**
+			 - Types: `boolean`, `integer`
+			 - Default: _false_
+		 - **skills&thinsp;.&thinsp;Perception**
+			 - Types: `boolean`, `integer`
+			 - Default: _false_
+		 - **skills&thinsp;.&thinsp;Survival**
+			 - Types: `boolean`, `integer`
+			 - Default: _false_
+		 - **skills&thinsp;.&thinsp;Deception**
+			 - Types: `boolean`, `integer`
+			 - Default: _false_
+		 - **skills&thinsp;.&thinsp;Intimidation**
+			 - Types: `boolean`, `integer`
+			 - Default: _false_
+		 - **skills&thinsp;.&thinsp;Performance**
+			 - Types: `boolean`, `integer`
+			 - Default: _false_
+		 - **skills&thinsp;.&thinsp;Persuasion**
+			 - Types: `boolean`, `integer`
+			 - Default: _false_
+ - **languages**
+	 - Type: `array`
+		 - **_Items_**
+		 - Type: `string`
+		 - Examples: 
+			 1. _"Common"_
+			 2. _"Abyssal"_
+			 3. _"Draconic"_
+			 4. _"Dwarvish"_
+			 5. _"Elven"_
+ - **ability_scores** `required`
+	 - Type: `object`
+	 - **_Properties_**
+		 - **ability_scores&thinsp;.&thinsp;str**
+			 - _Strength_
+			 - Type: `integer`
+			 - Default: `10`
+			 - Range:  &ge; 0
+		 - **ability_scores&thinsp;.&thinsp;dex**
+			 - _Dexterty_
+			 - Type: `integer`
+			 - Default: `10`
+			 - Range:  &ge; 0
+		 - **ability_scores&thinsp;.&thinsp;con**
+			 - _Constitution_
+			 - Type: `integer`
+			 - Default: `10`
+			 - Range:  &ge; 0
+		 - **ability_scores&thinsp;.&thinsp;int**
+			 - _Intelligence_
+			 - Type: `integer`
+			 - Default: `10`
+			 - Range:  &ge; 0
+		 - **ability_scores&thinsp;.&thinsp;wis**
+			 - _Wisdom_
+			 - Type: `integer`
+			 - Default: `10`
+			 - Range:  &ge; 0
+		 - **ability_scores&thinsp;.&thinsp;cha**
+			 - _Charisma_
+			 - Type: `integer`
+			 - Default: `10`
+			 - Range:  &ge; 0
+ - **saving_throws**
+	 - Type: `object`
+	 - **_Properties_**
+		 - **saving_throws&thinsp;.&thinsp;str**
+			 - Types: `boolean`, `integer`
+			 - Default: _false_
+		 - **saving_throws&thinsp;.&thinsp;dex**
+			 - Types: `boolean`, `integer`
+			 - Default: _false_
+		 - **saving_throws&thinsp;.&thinsp;con**
+			 - Types: `boolean`, `integer`
+			 - Default: _false_
+		 - **saving_throws&thinsp;.&thinsp;int**
+			 - Types: `boolean`, `integer`
+			 - Default: _false_
+		 - **saving_throws&thinsp;.&thinsp;wis**
+			 - Types: `boolean`, `integer`
+			 - Default: _false_
+		 - **saving_throws&thinsp;.&thinsp;cha**
+			 - Types: `boolean`, `integer`
+			 - Default: _false_
+ - **senses**
+	 - &#36;ref: [senses.schema.json](senses.schema.json.md)
+ - **description**
+	 - Type: `string`
+ - **armor_class** `required`
+	 - Type: `object`
+	 - **_Properties_**
+		 - **armor_class&thinsp;.&thinsp;value**
+			 - Type: `integer`
+			 - Default: `10`
+			 - Range:  &ge; 0
+		 - **armor_class&thinsp;.&thinsp;description**
+			 - Type: `string`
+			 - Default: _"Unarmored"_
+ - **shield**
+	 - _Toggle if shield is being used._
+	 - Type: `boolean`
+	 - Default: _false_
+ - **condtions**
+	 - Type: `object`
+	 - **_Properties_**
+		 - **condtions&thinsp;.&thinsp;Blinded**
+			 - Type: `boolean`
+			 - Default: _false_
+		 - **condtions&thinsp;.&thinsp;Charmed**
+			 - Type: `boolean`
+			 - Default: _false_
+		 - **condtions&thinsp;.&thinsp;Deafened**
+			 - Type: `boolean`
+			 - Default: _false_
+		 - **condtions&thinsp;.&thinsp;Exhaustion**
+			 - Type: `boolean`
+			 - Default: _false_
+		 - **condtions&thinsp;.&thinsp;Frightened**
+			 - Type: `boolean`
+			 - Default: _false_
+		 - **condtions&thinsp;.&thinsp;Grappled**
+			 - Type: `boolean`
+			 - Default: _false_
+		 - **condtions&thinsp;.&thinsp;Incapacitated**
+			 - Type: `boolean`
+			 - Default: _false_
+		 - **condtions&thinsp;.&thinsp;Invisible**
+			 - Type: `boolean`
+			 - Default: _false_
+		 - **condtions&thinsp;.&thinsp;Necrotic**
+			 - Type: `boolean`
+			 - Default: _false_
+		 - **condtions&thinsp;.&thinsp;Paralyzed**
+			 - Type: `boolean`
+			 - Default: _false_
+		 - **condtions&thinsp;.&thinsp;Petrified**
+			 - Type: `boolean`
+			 - Default: _false_
+		 - **condtions&thinsp;.&thinsp;Poisoned**
+			 - Type: `boolean`
+			 - Default: _false_
+		 - **condtions&thinsp;.&thinsp;Prone**
+			 - Type: `boolean`
+			 - Default: _false_
+		 - **condtions&thinsp;.&thinsp;Restrained**
+			 - Type: `boolean`
+			 - Default: _false_
+		 - **condtions&thinsp;.&thinsp;Stunned**
+			 - Type: `boolean`
+			 - Default: _false_
+		 - **condtions&thinsp;.&thinsp;Unconscious**
+			 - Type: `boolean`
+			 - Default: _false_
+ - **condition_immunities**
+	 - Type: `array`
+		 - **_Items_**
+		 - &#36;ref: [conditions.schema.json](conditions.schema.json.md)
+ - **damage_immunities**
+	 - Type: `array`
+		 - **_Items_**
+		 - &#36;ref: [damage_type.schema.json](damage_type.schema.json.md)
+ - **damage_resistances**
+	 - Type: `array`
+		 - **_Items_**
+		 - &#36;ref: [damage_type.schema.json](damage_type.schema.json.md)
+ - **damage_vulnerabilities**
+	 - Type: `array`
+		 - **_Items_**
+		 - &#36;ref: [damage_type.schema.json](damage_type.schema.json.md)
+ - **image**
+	 - &#36;ref: [image.schema.json](image.schema.json.md)
+ - **source**
+	 - &#36;ref: [source.schema.json](source.schema.json.md)
+
+_Generated with [json-schema-md-doc](https://brianwendt.github.io/json-schema-md-doc/)_
