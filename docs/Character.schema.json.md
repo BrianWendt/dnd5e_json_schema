@@ -158,7 +158,7 @@ Type: `object`
 	 - **_Properties_**
 		 - <i id="/properties/treasure/properties/pp">treasure&thinsp;.&thinsp;pp</i>
 			 - <i id="/properties/treasure/properties/pp">path: /properties/treasure/properties/pp</i>
-			 - _Platimum_
+			 - _Platinum_
 			 - Type: `number`
 			 - Default: `0`
 		 - <i id="/properties/treasure/properties/ep">treasure&thinsp;.&thinsp;ep</i>

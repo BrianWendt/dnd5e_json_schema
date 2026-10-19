@@ -155,7 +155,7 @@
                 "pp": {
                     "type": "number",
                     "default": 0,
-                    "description": "Platimum"
+                    "description": "Platinum"
                 },
                 "ep": {
                     "type": "number",
